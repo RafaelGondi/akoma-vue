@@ -35,13 +35,12 @@ function updateIndicator() {
   const icon = el.querySelector('.ak-tab-bar__icon') as HTMLElement | null
   const targetRect = (icon ?? el).getBoundingClientRect()
   const padX = 10
-  const padTop = 5
-  const padBottom = 9
+  const padY = 7
   indicator.value = {
     x: targetRect.left - trackRect.left - padX,
-    y: targetRect.top - trackRect.top - padTop,
+    y: targetRect.top - trackRect.top - padY,
     w: targetRect.width + padX * 2,
-    h: targetRect.height + padTop + padBottom,
+    h: targetRect.height + padY * 2,
     ready: true,
   }
 }

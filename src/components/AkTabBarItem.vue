@@ -74,9 +74,9 @@ function select() {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2px;
+  gap: 10px;
   min-width: 0;
-  padding: 7px 6px 5px;
+  padding: 10px 6px 8px;
   border: 0;
   background: transparent;
   color: var(--text-secondary);
@@ -128,7 +128,7 @@ function select() {
 }
 
 .ak-tab-bar__item--active .ak-tab-bar__icon {
-  transform: translateY(-1px) scale(1.06);
+  transform: scale(1.04);
   opacity: 1;
 }
 
