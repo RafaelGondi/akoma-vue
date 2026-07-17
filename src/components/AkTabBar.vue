@@ -21,7 +21,7 @@ const emit = defineEmits<{
 
 const trackRef = ref<HTMLElement | null>(null)
 const items = reactive(new Map<string, HTMLElement>())
-const indicator = ref({ x: 0, w: 0, ready: false })
+const indicator = ref({ x: 0, y: 0, w: 0, h: 0, ready: false })
 
 function updateIndicator() {
   const track = trackRef.value
@@ -32,11 +32,16 @@ function updateIndicator() {
   }
 
   const trackRect = track.getBoundingClientRect()
-  const elRect = el.getBoundingClientRect()
-  const indicatorWidth = 44
+  const icon = el.querySelector('.ak-tab-bar__icon') as HTMLElement | null
+  const targetRect = (icon ?? el).getBoundingClientRect()
+  const padX = 10
+  const padTop = 5
+  const padBottom = 9
   indicator.value = {
-    x: elRect.left - trackRect.left + (elRect.width - indicatorWidth) / 2,
-    w: indicatorWidth,
+    x: targetRect.left - trackRect.left - padX,
+    y: targetRect.top - trackRect.top - padTop,
+    w: targetRect.width + padX * 2,
+    h: targetRect.height + padTop + padBottom,
     ready: true,
   }
 }
@@ -81,8 +86,9 @@ provide(TAB_BAR_KEY, {
         class="ak-tab-bar__indicator"
         :class="{ 'ak-tab-bar__indicator--ready': indicator.ready }"
         :style="{
-          transform: `translateX(${indicator.x}px)`,
+          transform: `translate(${indicator.x}px, ${indicator.y}px)`,
           width: `${indicator.w}px`,
+          height: `${indicator.h}px`,
         }"
         aria-hidden="true"
       />
@@ -119,10 +125,9 @@ provide(TAB_BAR_KEY, {
 
 .ak-tab-bar__indicator {
   position: absolute;
-  top: 7px;
+  top: 0;
   left: 0;
-  height: 32px;
-  border-radius: 11px;
+  border-radius: 12px;
   background: var(--accent-soft);
   border: 1px solid color-mix(in srgb, var(--accent) 10%, transparent);
   opacity: 0;
@@ -130,6 +135,7 @@ provide(TAB_BAR_KEY, {
   transition:
     transform 340ms var(--ease-out-expo),
     width 340ms var(--ease-out-expo),
+    height 340ms var(--ease-out-expo),
     opacity 220ms var(--ease-smooth);
 }
 

@@ -119,7 +119,7 @@ function select() {
   align-items: center;
   justify-content: center;
   width: 24px;
-  height: 32px;
+  height: 24px;
   line-height: 0;
   opacity: 0.76;
   transition:
@@ -128,7 +128,7 @@ function select() {
 }
 
 .ak-tab-bar__item--active .ak-tab-bar__icon {
-  transform: translateY(-1px) scale(1.08);
+  transform: translateY(-1px) scale(1.06);
   opacity: 1;
 }
 
