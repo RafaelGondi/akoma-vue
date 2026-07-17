@@ -19,6 +19,7 @@ body {
   height: 100dvh;
   padding: 36px 18px 28px;
   background: color-mix(in srgb, var(--bg-soft) 72%, var(--bg-elevated));
+  border-right: 1px solid var(--border);
   overflow-y: auto;
 }
 
@@ -185,11 +186,10 @@ body {
 }
 
 .docs-preview {
-  background: var(--bg-elevated);
-  border: 1px solid var(--card-border);
-  border-radius: var(--card-radius);
-  box-shadow: var(--card-shadow);
-  padding: 40px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 8px 0 24px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -280,10 +280,9 @@ body {
   width: 100%;
   border-collapse: collapse;
   font-size: 14px;
-  background: var(--bg-elevated);
+  background: var(--bg);
   border: 1px solid var(--card-border);
   border-radius: var(--card-radius);
-  box-shadow: var(--card-shadow);
   overflow: hidden;
 }
 
@@ -326,8 +325,7 @@ body {
   border: 1px solid var(--card-border);
   border-radius: var(--card-radius);
   overflow: hidden;
-  background: var(--bg-elevated);
-  box-shadow: var(--shadow-sm);
+  background: var(--bg);
 }
 
 .docs-swatch__color {
@@ -360,16 +358,12 @@ body {
   padding: 22px;
   border: 1px solid var(--card-border);
   border-radius: var(--card-radius);
-  background: var(--bg-elevated);
-  box-shadow: var(--card-shadow);
-  transition:
-    transform 0.18s var(--ease-spring),
-    box-shadow var(--transition);
+  background: var(--bg);
+  transition: border-color var(--transition);
 }
 
 .docs-link-card:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  border-color: color-mix(in srgb, var(--accent) 28%, var(--border-strong));
 }
 
 .docs-link-card__title {
@@ -471,10 +465,9 @@ body {
   min-height: 202px;
   margin-top: var(--space-8);
   padding: var(--space-5);
-  background: var(--card-bg);
+  background: var(--bg);
   border: 1px solid var(--card-border);
   border-radius: var(--card-radius);
-  box-shadow: var(--card-shadow);
 }
 
 .docs-demo-copy {
@@ -616,8 +609,8 @@ body {
     width: min(280px, 86vw);
     transform: translateX(-105%);
     transition: transform 0.28s var(--ease-out-expo);
-    box-shadow: var(--shadow-md);
-    background: var(--bg-elevated);
+    border-right: 1px solid var(--border-strong);
+    background: var(--bg);
   }
 
   .docs-sidebar.is-open {

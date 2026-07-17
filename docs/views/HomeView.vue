@@ -19,7 +19,7 @@ const router = useRouter()
         Explore components
       </AkButton>
       <AkButton size="lg" variant="secondary" @click="router.push('/philosophy')">
-        Design philosophy
+        Design guides
       </AkButton>
       <AkButton size="lg" variant="secondary" @click="router.push('/tokens')">
         View foundations
@@ -35,7 +35,7 @@ const router = useRouter()
       </div>
       <p class="docs-section__desc">
         Typography, spacing, accessibility, and component anatomy remain the same.
-        Color, shape, and elevation adapt to the job.
+        Color, shape, and surface tone adapt to the job.
       </p>
     </div>
 

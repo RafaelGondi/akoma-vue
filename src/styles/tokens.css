@@ -54,8 +54,8 @@
   --text-tertiary: #929b95;
   --text-inverse: #fffefa;
 
-  --border: rgba(41, 49, 45, 0.07);
-  --border-strong: rgba(41, 49, 45, 0.14);
+  --border: rgba(41, 49, 45, 0.1);
+  --border-strong: rgba(41, 49, 45, 0.18);
 
   --accent: #6658b8;
   --accent-hover: #5548a3;
@@ -78,28 +78,28 @@
   --info: #426f8e;
   --info-soft: #e6f0f6;
 
-  --shadow-sm: 0 1px 2px rgba(49, 44, 35, 0.04), 0 8px 22px rgba(49, 44, 35, 0.055);
-  --shadow-md: 0 2px 4px rgba(49, 44, 35, 0.04), 0 18px 44px rgba(49, 44, 35, 0.09);
-  --shadow-nav: 0 -8px 32px rgba(49, 44, 35, 0.07);
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-nav: 0 -1px 0 var(--border);
 
-  --radius-sm: 12px;
-  --radius-md: 18px;
-  --radius-lg: 28px;
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
   --button-radius: var(--radius-full);
-  --card-radius: 24px;
-  --field-radius: 16px;
+  --card-radius: 10px;
+  --field-radius: 12px;
   --chip-radius: var(--radius-full);
   --badge-radius: var(--radius-full);
 
-  --card-bg: var(--bg-elevated);
-  --card-border: transparent;
-  --card-shadow: var(--shadow-sm);
+  --card-bg: var(--bg);
+  --card-border: var(--border-strong);
+  --card-shadow: none;
   --field-bg: var(--bg-soft);
   --field-bg-hover: var(--bg-muted);
   --field-border: transparent;
   --control-border: var(--border-strong);
-  --focus-ring: 0 0 0 4px rgba(102, 88, 184, 0.15);
-  --button-shadow: 0 6px 18px rgba(102, 88, 184, 0.2);
+  --focus-ring: 0 0 0 3px rgba(102, 88, 184, 0.14);
+  --button-shadow: none;
 
   --nav-glass: rgba(255, 254, 250, 0.9);
   --fill-strong: #29312d;
@@ -125,30 +125,30 @@
   --text-secondary: #65706a;
   --text-tertiary: #929b95;
   --text-inverse: #fffefa;
-  --border: rgba(41, 49, 45, 0.07);
-  --border-strong: rgba(41, 49, 45, 0.14);
+  --border: rgba(41, 49, 45, 0.1);
+  --border-strong: rgba(41, 49, 45, 0.18);
   --accent: #6658b8;
   --accent-hover: #5548a3;
   --accent-soft: #ece9f8;
   --accent-contrast: #ffffff;
-  --shadow-sm: 0 1px 2px rgba(49, 44, 35, 0.04), 0 8px 22px rgba(49, 44, 35, 0.055);
-  --shadow-md: 0 2px 4px rgba(49, 44, 35, 0.04), 0 18px 44px rgba(49, 44, 35, 0.09);
-  --radius-sm: 12px;
-  --radius-md: 18px;
-  --radius-lg: 28px;
+  --shadow-sm: none;
+  --shadow-md: none;
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
   --button-radius: var(--radius-full);
-  --card-radius: 24px;
-  --field-radius: 16px;
+  --card-radius: 10px;
+  --field-radius: 12px;
   --chip-radius: var(--radius-full);
   --badge-radius: var(--radius-full);
-  --card-bg: var(--bg-elevated);
-  --card-border: transparent;
-  --card-shadow: var(--shadow-sm);
+  --card-bg: var(--bg);
+  --card-border: var(--border-strong);
+  --card-shadow: none;
   --field-bg: var(--bg-soft);
   --field-bg-hover: var(--bg-muted);
   --field-border: transparent;
-  --focus-ring: 0 0 0 4px rgba(102, 88, 184, 0.15);
-  --button-shadow: 0 6px 18px rgba(102, 88, 184, 0.2);
+  --focus-ring: 0 0 0 3px rgba(102, 88, 184, 0.14);
+  --button-shadow: none;
 }
 
 /* Site expression — mineral white + confident evergreen.
@@ -166,8 +166,8 @@
   --text-tertiary: #8b978f;
   --text-inverse: #ffffff;
 
-  --border: rgba(33, 49, 41, 0.08);
-  --border-strong: rgba(33, 49, 41, 0.16);
+  --border: rgba(33, 49, 41, 0.11);
+  --border-strong: rgba(33, 49, 41, 0.2);
 
   --accent: #2e684f;
   --accent-hover: #245640;
@@ -190,28 +190,28 @@
   --info: #386984;
   --info-soft: #e3eef4;
 
-  --shadow-sm: 0 1px 2px rgba(28, 48, 38, 0.035), 0 5px 16px rgba(28, 48, 38, 0.045);
-  --shadow-md: 0 2px 4px rgba(28, 48, 38, 0.04), 0 14px 36px rgba(28, 48, 38, 0.075);
-  --shadow-nav: 0 -6px 28px rgba(28, 48, 38, 0.055);
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-nav: 0 -1px 0 var(--border);
 
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 18px;
-  --button-radius: 10px;
-  --card-radius: 16px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --button-radius: 8px;
+  --card-radius: 8px;
   --field-radius: 10px;
   --chip-radius: 10px;
   --badge-radius: 8px;
 
-  --card-bg: var(--bg-elevated);
-  --card-border: var(--border);
-  --card-shadow: 0 1px 2px rgba(28, 48, 38, 0.025), 0 8px 24px rgba(28, 48, 38, 0.04);
+  --card-bg: var(--bg);
+  --card-border: var(--border-strong);
+  --card-shadow: none;
   --field-bg: var(--bg-elevated);
   --field-bg-hover: var(--bg-elevated);
   --field-border: var(--border-strong);
   --control-border: var(--border-strong);
-  --focus-ring: 0 0 0 4px rgba(46, 104, 79, 0.13);
-  --button-shadow: 0 4px 12px rgba(46, 104, 79, 0.16);
+  --focus-ring: 0 0 0 3px rgba(46, 104, 79, 0.12);
+  --button-shadow: none;
 
   --nav-glass: rgba(255, 255, 255, 0.92);
   --fill-strong: #213129;
@@ -257,13 +257,14 @@
   --info: #86afc8;
   --info-soft: #293b46;
 
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.16), 0 8px 22px rgba(0, 0, 0, 0.14);
-  --shadow-md: 0 2px 4px rgba(0, 0, 0, 0.18), 0 18px 44px rgba(0, 0, 0, 0.24);
-  --card-border: rgba(255, 255, 255, 0.04);
+  --shadow-sm: none;
+  --shadow-md: none;
+  --card-border: rgba(255, 255, 255, 0.1);
+  --card-shadow: none;
   --field-border: rgba(255, 255, 255, 0.1);
   --control-border: rgba(255, 255, 255, 0.14);
-  --focus-ring: 0 0 0 4px rgba(169, 158, 232, 0.18);
-  --button-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
+  --focus-ring: 0 0 0 3px rgba(169, 158, 232, 0.16);
+  --button-shadow: none;
 
   --nav-glass: rgba(39, 44, 41, 0.92);
   --fill-strong: #f3f1ec;
@@ -305,14 +306,14 @@
   --info: #84adc4;
   --info-soft: #293d47;
 
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.16), 0 6px 18px rgba(0, 0, 0, 0.13);
-  --shadow-md: 0 2px 4px rgba(0, 0, 0, 0.18), 0 16px 40px rgba(0, 0, 0, 0.22);
-  --card-border: rgba(255, 255, 255, 0.065);
-  --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-sm: none;
+  --shadow-md: none;
+  --card-border: rgba(255, 255, 255, 0.1);
+  --card-shadow: none;
   --field-border: rgba(255, 255, 255, 0.13);
   --control-border: rgba(255, 255, 255, 0.14);
-  --focus-ring: 0 0 0 4px rgba(130, 185, 157, 0.16);
-  --button-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  --focus-ring: 0 0 0 3px rgba(130, 185, 157, 0.14);
+  --button-shadow: none;
 
   --nav-glass: rgba(35, 45, 40, 0.92);
   --fill-strong: #f0f3f0;

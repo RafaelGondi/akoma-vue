@@ -37,7 +37,6 @@ defineSlots<{
   background: var(--card-bg);
   border: 1px solid var(--card-border);
   border-radius: var(--card-radius);
-  box-shadow: var(--card-shadow);
 }
 
 .ak-empty__icon {
@@ -47,7 +46,7 @@ defineSlots<{
   margin-bottom: var(--space-5);
   display: grid;
   place-items: center;
-  animation: ak-empty-float 4s ease-in-out infinite;
+  animation: none;
 }
 
 .ak-empty__ring {

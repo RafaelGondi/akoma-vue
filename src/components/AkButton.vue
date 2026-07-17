@@ -65,19 +65,14 @@ defineSlots<{
     background-color var(--transition),
     color var(--transition),
     border-color var(--transition),
-    box-shadow var(--transition),
     opacity var(--transition),
     transform var(--transition);
   white-space: nowrap;
   user-select: none;
 }
 
-.ak-button:hover:not(:disabled) {
-  transform: translateY(-1px);
-}
-
 .ak-button:active:not(:disabled) {
-  transform: translateY(0) scale(0.985);
+  transform: scale(0.985);
 }
 
 .ak-button:focus-visible {
@@ -116,12 +111,10 @@ defineSlots<{
 .ak-button--primary {
   background: var(--accent);
   color: var(--accent-contrast);
-  box-shadow: var(--button-shadow);
 }
 
 .ak-button--primary:hover:not(:disabled) {
   background: var(--accent-hover);
-  box-shadow: var(--button-shadow);
 }
 
 .ak-button--secondary {
@@ -147,7 +140,6 @@ defineSlots<{
 .ak-button--danger {
   background: var(--danger);
   color: var(--accent-contrast);
-  box-shadow: 0 4px 14px color-mix(in srgb, var(--danger) 22%, transparent);
 }
 
 .ak-button--danger:hover:not(:disabled) {

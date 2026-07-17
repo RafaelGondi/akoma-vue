@@ -10,7 +10,7 @@ const padding = ref<'none' | 'sm' | 'md' | 'lg'>('md')
   <header class="docs-page-header reveal">
     <span class="page-label">Components</span>
     <h1 class="page-title">Card</h1>
-    <p class="docs-lead">Elevated surface with optional media, header, and footer slots.</p>
+    <p class="docs-lead">Flat surface with optional media, header, and footer slots.</p>
   </header>
 
   <section class="docs-section reveal reveal-d1">

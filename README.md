@@ -13,11 +13,11 @@ Built with **Vue 3 Composition API + TypeScript**. Styles use CSS variables (no 
 | **Site** | Composed, precise, trustworthy | Finance, B2B and institutional sites | `<html data-mood="site">` |
 
 Both moods share DM Sans, an optional Lora editorial accent, components, spacing,
-and accessible interaction states. Their palettes, radii, controls, and elevation
+and accessible interaction states. Their palettes, radii, and surface treatment
 adapt to context. Dark mode works in both via `data-theme="dark"`.
 
-See **Philosophy** in the docs (`/philosophy`) for design principles, decision log,
-and an implementation checklist for product teams.
+Design guides ship as Markdown in the npm package and in the docs under **Guides**
+(`/philosophy`).
 
 ## Quick start
 
@@ -59,14 +59,20 @@ document.documentElement.dataset.theme = 'dark' // warm dark theme
 document.documentElement.dataset.mood = 'site' // sober "Site" mood
 ```
 
-## Components (v0.3)
+## Components (v0.4)
 
 | Component | Description |
 |-----------|-------------|
 | `AkButton` | Primary / secondary / ghost / danger |
+| `AkIconButton` | Icon-only actions |
 | `AkBadge` | Status pills |
 | `AkChip` | Filter & category chips |
-| `AkCard` | Elevated surface with slots |
+| `AkCard` | Flat surface with slots |
+| `AkList` / `AkListRow` | Grouped flat rows |
+| `AkSectionHeader` | Uppercase section labels |
+| `AkProgress` | Progress bars |
+| `AkDivider` | Section separators |
+| `AkSwitch` | Toggle settings |
 | `AkInput` | Labeled text field |
 | `AkTextarea` | Multi-line field |
 | `AkEmptyState` | Empty list placeholder |
@@ -82,6 +88,24 @@ document.documentElement.dataset.mood = 'site' // sober "Site" mood
 | `npm run build:docs` | Build static docs (`dist-docs/`) |
 | `npm run preview` | Preview docs build |
 
+## Design guides (Markdown)
+
+Guides live in `content/` and ship with the package:
+
+| File | Topic |
+|------|-------|
+| `philosophy.md` | North star, pillars, anti-patterns |
+| `moods.md` | App vs Site |
+| `decisions.md` | Design decision log |
+| `implementation.md` | Migration checklist |
+
+```ts
+// Vite
+import philosophy from '@rafael_dias/akoma/content/philosophy.md?raw'
+```
+
+See [content/README.md](./content/README.md) for Node usage.
+
 ## Project structure
 
 ```
@@ -92,6 +116,7 @@ akoma/
 │   ├── plugin.ts
 │   └── index.ts
 ├── docs/                # Interactive playground
+├── content/             # Markdown guides (npm + docs)
 ├── vite.config.ts       # Docs app
 └── vite.lib.config.ts   # npm library build
 ```

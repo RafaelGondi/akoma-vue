@@ -23,7 +23,7 @@ defineSlots<{
     class="ak-card"
     :class="[
       `ak-card--pad-${padding}`,
-      { 'ak-card--interactive tap-scale': interactive },
+      { 'ak-card--interactive': interactive },
     ]"
   >
     <div v-if="$slots.media" class="ak-card__media">
@@ -49,7 +49,6 @@ defineSlots<{
   background: var(--card-bg);
   border: 1px solid var(--card-border);
   border-radius: var(--card-radius);
-  box-shadow: var(--card-shadow);
   overflow: hidden;
 }
 
@@ -90,20 +89,16 @@ defineSlots<{
 
 .ak-card--interactive {
   cursor: pointer;
-  transition:
-    border-color var(--transition),
-    box-shadow 220ms var(--ease-out-expo),
-    transform 220ms var(--ease-out-expo);
+  transition: border-color var(--transition);
 }
 
 .ak-card--interactive:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--accent) 28%, var(--border-strong));
 }
 
 .ak-card--interactive:focus-within {
   border-color: var(--accent);
-  box-shadow: var(--focus-ring);
+  outline: none;
 }
 
 .ak-card__media {
