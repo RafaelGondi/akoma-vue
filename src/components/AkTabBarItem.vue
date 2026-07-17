@@ -58,7 +58,7 @@ function select() {
   >
     <span class="ak-tab-bar__icon" aria-hidden="true">
       <slot name="icon">
-        <AkIcon v-if="icon" :name="icon" :size="22" />
+        <AkIcon v-if="icon" :name="icon" :size="20" />
       </slot>
     </span>
     <span class="ak-tab-bar__label">{{ label }}</span>
@@ -74,9 +74,9 @@ function select() {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 5px;
   min-width: 0;
-  padding: 10px 6px 8px;
+  padding: 8px 4px 7px;
   border: 0;
   background: transparent;
   color: var(--text-secondary);
@@ -114,21 +114,19 @@ function select() {
   box-shadow: inset var(--focus-ring);
 }
 
+/* Capsule slot — indicator snaps to this box (GitHub-style). */
 .ak-tab-bar__icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 24px;
-  height: 24px;
+  width: 56px;
+  height: 28px;
   line-height: 0;
-  opacity: 0.76;
-  transition:
-    transform 320ms var(--ease-spring),
-    opacity var(--transition);
+  opacity: 0.72;
+  transition: opacity var(--transition);
 }
 
 .ak-tab-bar__item--active .ak-tab-bar__icon {
-  transform: scale(1.04);
   opacity: 1;
 }
 
@@ -137,7 +135,7 @@ function select() {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  opacity: 0.76;
+  opacity: 0.72;
   transition:
     color var(--transition),
     font-weight 280ms var(--ease-smooth),
@@ -151,14 +149,6 @@ function select() {
 
 @media (prefers-reduced-motion: reduce) {
   .ak-tab-bar__item:active:not(:disabled) {
-    transform: none;
-  }
-
-  .ak-tab-bar__icon {
-    transition: none;
-  }
-
-  .ak-tab-bar__item--active .ak-tab-bar__icon {
     transform: none;
   }
 }

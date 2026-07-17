@@ -34,13 +34,11 @@ function updateIndicator() {
   const trackRect = track.getBoundingClientRect()
   const icon = el.querySelector('.ak-tab-bar__icon') as HTMLElement | null
   const targetRect = (icon ?? el).getBoundingClientRect()
-  const padX = 10
-  const padY = 7
   indicator.value = {
-    x: targetRect.left - trackRect.left - padX,
-    y: targetRect.top - trackRect.top - padY,
-    w: targetRect.width + padX * 2,
-    h: targetRect.height + padY * 2,
+    x: targetRect.left - trackRect.left,
+    y: targetRect.top - trackRect.top,
+    w: targetRect.width,
+    h: targetRect.height,
     ready: true,
   }
 }
@@ -126,9 +124,8 @@ provide(TAB_BAR_KEY, {
   position: absolute;
   top: 0;
   left: 0;
-  border-radius: 12px;
+  border-radius: var(--radius-full);
   background: var(--accent-soft);
-  border: 1px solid color-mix(in srgb, var(--accent) 10%, transparent);
   opacity: 0;
   pointer-events: none;
   transition:

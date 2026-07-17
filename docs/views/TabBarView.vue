@@ -10,8 +10,8 @@ const active = ref('home')
     <span class="page-label">Components</span>
     <h1 class="page-title">TabBar</h1>
     <p class="docs-lead">
-      Full-width bottom navigation with a compact sliding highlight, clear active state,
-      and press feedback. Pair with <code>.akoma-shell</code> so content clears the nav.
+      Full-width bottom navigation with a GitHub-style capsule highlight behind the icon,
+      clear gap to the label, and press feedback. Pair with <code>.akoma-shell</code> so content clears the nav.
     </p>
   </header>
 
