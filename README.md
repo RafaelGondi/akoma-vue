@@ -28,13 +28,13 @@ Interactive docs: [http://localhost:5173](http://localhost:5173)
 ## Library usage (after publish)
 
 ```bash
-npm install @akoma/vue
+npm install @rafael_dias/akoma
 ```
 
 ```ts
 import { createApp } from 'vue'
-import { Akoma, AkButton } from '@akoma/vue'
-import '@akoma/vue/style.css'
+import { Akoma, AkButton } from '@rafael_dias/akoma'
+import '@rafael_dias/akoma/style.css'
 
 createApp(App).use(Akoma).mount('#app')
 ```
@@ -43,7 +43,7 @@ Or import components à la carte:
 
 ```vue
 <script setup lang="ts">
-import { AkButton, AkInput } from '@akoma/vue'
+import { AkButton, AkInput } from '@rafael_dias/akoma'
 </script>
 ```
 
@@ -98,4 +98,4 @@ npm run build
 npm publish --access public
 ```
 
-Ensure the package name `@akoma/vue` is available (or rename in `package.json`).
+The package is published publicly as `@rafael_dias/akoma`.

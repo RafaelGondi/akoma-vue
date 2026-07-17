@@ -121,11 +121,11 @@ const router = useRouter()
       App is the default. Add <code>data-mood="site"</code> at the root for the
       more restrained expression.
     </p>
-    <pre class="docs-code">npm install @akoma/vue
+    <pre class="docs-code">npm install @rafael_dias/akoma
 
 import { createApp } from 'vue'
-import { Akoma } from '@akoma/vue'
-import '@akoma/vue/style.css'
+import { Akoma } from '@rafael_dias/akoma'
+import '@rafael_dias/akoma/style.css'
 
 document.documentElement.dataset.mood = 'site'
 createApp(App).use(Akoma).mount('#app')</pre>
