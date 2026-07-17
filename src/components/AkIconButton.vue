@@ -29,7 +29,7 @@ defineSlots<{
 }>()
 
 const iconSize = computed(() => {
-  const sizes: Record<IconButtonSize, number> = { sm: 16, md: 18, lg: 20 }
+  const sizes: Record<IconButtonSize, number> = { sm: 18, md: 20, lg: 22 }
   return sizes[props.size]
 })
 </script>
@@ -48,9 +48,9 @@ const iconSize = computed(() => {
     :aria-busy="loading || undefined"
   >
     <span v-if="loading" class="ak-icon-button__spinner" aria-hidden="true" />
+    <AkIcon v-else-if="icon" :name="icon" :size="iconSize" />
     <span v-else class="ak-icon-button__icon">
-      <AkIcon v-if="icon" :name="icon" :size="iconSize" />
-      <slot v-else />
+      <slot />
     </span>
   </button>
 </template>
@@ -128,15 +128,25 @@ const iconSize = computed(() => {
 
 .ak-icon-button__icon {
   display: inline-flex;
-  width: 1.1em;
-  height: 1.1em;
   align-items: center;
   justify-content: center;
+  width: 20px;
+  height: 20px;
 }
 
 .ak-icon-button__icon :deep(svg) {
   width: 100%;
   height: 100%;
+}
+
+.ak-icon-button--sm .ak-icon-button__icon {
+  width: 18px;
+  height: 18px;
+}
+
+.ak-icon-button--lg .ak-icon-button__icon {
+  width: 22px;
+  height: 22px;
 }
 
 .ak-icon-button__spinner {

@@ -47,9 +47,6 @@ const markup = computed(() => getCuidaIconMarkup(props.name))
   display: block;
   width: 100%;
   height: 100%;
-}
-
-.ak-icon :deep(path) {
   fill: currentColor;
 }
 
