@@ -1,0 +1,60 @@
+{
+  "name": "@akoma/vue",
+  "version": "0.2.0",
+  "description": "Akoma design system for Vue 3 — warm surfaces, expressive type, tactile components.",
+  "type": "module",
+  "author": "Rafael",
+  "license": "MIT",
+  "keywords": [
+    "vue",
+    "vue3",
+    "design-system",
+    "ui",
+    "components",
+    "akoma"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "main": "./dist/akoma.cjs",
+  "module": "./dist/akoma.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/akoma.js",
+      "require": "./dist/akoma.cjs"
+    },
+    "./style.css": "./dist/akoma.css",
+    "./tokens.css": "./src/styles/tokens.css",
+    "./base.css": "./src/styles/base.css",
+    "./motion.css": "./src/styles/motion.css"
+  },
+  "files": [
+    "dist",
+    "src/styles"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc -p tsconfig.lib.json --declaration --emitDeclarationOnly && vite build --config vite.lib.config.ts",
+    "build:docs": "vite build",
+    "preview": "vite preview",
+    "typecheck": "vue-tsc -p tsconfig.app.json --noEmit"
+  },
+  "peerDependencies": {
+    "vue": "^3.5.0"
+  },
+  "dependencies": {
+    "vue": "^3.5.39"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.2",
+    "@vitejs/plugin-vue": "^6.0.7",
+    "@vue/tsconfig": "^0.9.1",
+    "typescript": "~6.0.2",
+    "vite": "^8.1.1",
+    "vite-plugin-dts": "^4.5.4",
+    "vue-router": "^4.6.4",
+    "vue-tsc": "^3.3.5"
+  }
+}
