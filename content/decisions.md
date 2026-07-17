@@ -10,9 +10,9 @@ When in doubt, follow these choices instead of improvising.
 
 ## Color
 
-- **Choice:** App → violet on stone; Site → evergreen on mineral white
-- **Why:** App feels personal; Site feels credible for finance/B2B
-- **Rejected:** Single accent for everything; cold blue-gray SaaS palette
+- **Choice:** Mood for shape; `data-accent` for brand color (8 named palettes)
+- **Why:** Apps should not all look violet; finance can stay evergreen, study apps can use teal
+- **Rejected:** One global accent; hardcoded purple in every App product
 
 ## Surfaces
 

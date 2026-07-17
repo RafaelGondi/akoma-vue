@@ -7,9 +7,12 @@ import moods from '../../content/moods.md?raw'
 import decisions from '../../content/decisions.md?raw'
 import implementation from '../../content/implementation.md?raw'
 
+import colors from '../../content/colors.md?raw'
+
 const guides: Record<string, { title: string; label: string; source: string }> = {
   philosophy: { title: 'Philosophy', label: 'Philosophy', source: philosophy },
   moods: { title: 'App vs Site', label: 'Moods', source: moods },
+  colors: { title: 'Accent palettes', label: 'Colors', source: colors },
   decisions: { title: 'Design decisions', label: 'Decisions', source: decisions },
   implementation: { title: 'Implementation', label: 'Checklist', source: implementation },
 }

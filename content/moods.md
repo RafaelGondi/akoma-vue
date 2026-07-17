@@ -29,3 +29,15 @@ document.documentElement.dataset.theme = 'dark'
 ```
 
 Never use cold pure black — backgrounds stay mineral or forest-toned.
+
+## Accent palettes
+
+Brand color is independent from mood. Without `data-accent`, App defaults to **violet** and Site to **evergreen**.
+
+```html
+<html data-mood="app" data-accent="teal">
+```
+
+Available: `violet`, `evergreen`, `teal`, `ocean`, `amber`, `rose`, `coral`, `slate`.
+
+See [colors.md](./colors.md) for the full guide.

@@ -146,6 +146,24 @@ body {
   color: var(--accent);
 }
 
+.docs-accent-picker__select {
+  height: 38px;
+  padding: 0 14px;
+  border-radius: var(--button-radius);
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 700;
+  border: 1px solid var(--border);
+  cursor: pointer;
+}
+
+.docs-accent-picker__select:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-color: var(--accent);
+}
+
 .docs-content {
   max-width: var(--docs-max);
   padding: 42px clamp(20px, 4vw, 48px) 88px;

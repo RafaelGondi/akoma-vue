@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { accentPaletteIds, accentPalettes } from '@akoma'
+
 const surfaces = [
   { name: 'Background', token: '--bg' },
   { name: 'Elevated', token: '--bg-elevated' },
@@ -40,14 +42,36 @@ const semantic = [
     <span class="page-label">Foundation</span>
     <h1 class="page-title">Tokens</h1>
     <p class="docs-lead">
-      CSS custom properties power every component. The swatches below react to the
-      mood switch (App / Site) and theme. Override in your <code>:root</code>, or set
-      <code>data-mood="site"</code> and <code>data-theme="dark"</code> on the
-      <code>html</code> element.
+      CSS custom properties power every component. Swatches react to mood (App / Site),
+      accent palette, and theme. Set <code>data-mood</code>, <code>data-accent</code>, and
+      <code>data-theme="dark"</code> on <code>html</code>.
     </p>
   </header>
 
   <section class="docs-section reveal reveal-d1">
+    <h2 class="docs-section__title">Accent palettes</h2>
+    <p class="docs-section__desc" style="margin-bottom: 16px">
+      Use the accent picker in the toolbar, or set <code>data-accent="teal"</code> on
+      <code>html</code>. Without it, App defaults to violet and Site to evergreen.
+    </p>
+    <div class="docs-swatch-grid">
+      <div v-for="id in accentPaletteIds" :key="id" class="docs-swatch">
+        <div
+          class="docs-swatch__color"
+          :style="{ background: accentPalettes[id].sample }"
+        />
+        <div class="docs-swatch__meta">
+          <div class="docs-swatch__name">{{ accentPalettes[id].label }}</div>
+          <div class="docs-swatch__token">data-accent="{{ id }}"</div>
+        </div>
+      </div>
+    </div>
+    <p style="margin-top: 14px; font-size: 13px; color: var(--text-secondary)">
+      Use the accent picker in the toolbar to preview each palette on live components.
+    </p>
+  </section>
+
+  <section class="docs-section reveal reveal-d2">
     <h2 class="docs-section__title">Surfaces</h2>
     <div class="docs-swatch-grid">
       <div v-for="item in surfaces" :key="item.token" class="docs-swatch">
@@ -60,7 +84,7 @@ const semantic = [
     </div>
   </section>
 
-  <section class="docs-section reveal reveal-d2">
+  <section class="docs-section reveal reveal-d3">
     <h2 class="docs-section__title">Text</h2>
     <div class="docs-swatch-grid">
       <div v-for="item in text" :key="item.token" class="docs-swatch">
@@ -73,7 +97,7 @@ const semantic = [
     </div>
   </section>
 
-  <section class="docs-section reveal reveal-d3">
+  <section class="docs-section reveal reveal-d4">
     <h2 class="docs-section__title">Brand</h2>
     <div class="docs-swatch-grid">
       <div v-for="item in brand" :key="item.token" class="docs-swatch">
@@ -86,7 +110,7 @@ const semantic = [
     </div>
   </section>
 
-  <section class="docs-section reveal reveal-d4">
+  <section class="docs-section reveal reveal-d5">
     <h2 class="docs-section__title">Categories</h2>
     <div class="docs-swatch-grid">
       <div v-for="item in cats" :key="item.token" class="docs-swatch">
@@ -99,7 +123,7 @@ const semantic = [
     </div>
   </section>
 
-  <section class="docs-section reveal reveal-d5">
+  <section class="docs-section reveal reveal-d6">
     <h2 class="docs-section__title">Semantic</h2>
     <div class="docs-swatch-grid">
       <div v-for="item in semantic" :key="item.token" class="docs-swatch">
@@ -112,7 +136,7 @@ const semantic = [
     </div>
   </section>
 
-  <section class="docs-section reveal reveal-d6">
+  <section class="docs-section reveal reveal-d7">
     <h2 class="docs-section__title">Typography & radius</h2>
     <div class="docs-preview docs-preview--stack">
       <p style="font-family: var(--font-display); font-size: 32px; font-weight: 650; letter-spacing: -0.04em">

@@ -1,12 +1,14 @@
 <script setup lang="ts">
 import { onMounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
+import { accentPaletteIds, accentPalettes, type AccentPalette } from '@akoma'
 import { navGroups } from '../router'
 
 const route = useRoute()
 const sidebarOpen = ref(false)
 const theme = ref<'light' | 'dark'>('light')
 const mood = ref<'app' | 'site'>('app')
+const accent = ref<AccentPalette | 'auto'>('auto')
 
 function applyTheme(next: 'light' | 'dark') {
   theme.value = next
@@ -28,6 +30,16 @@ function applyMood(next: 'app' | 'site') {
   localStorage.setItem('akoma-docs-mood', next)
 }
 
+function applyAccent(next: AccentPalette | 'auto') {
+  accent.value = next
+  if (next === 'auto') {
+    delete document.documentElement.dataset.accent
+  } else {
+    document.documentElement.dataset.accent = next
+  }
+  localStorage.setItem('akoma-docs-accent', next)
+}
+
 function toggleTheme() {
   applyTheme(theme.value === 'light' ? 'dark' : 'light')
 }
@@ -40,6 +52,12 @@ onMounted(() => {
   const savedMood = localStorage.getItem('akoma-docs-mood')
   if (savedMood === 'app' || savedMood === 'site') {
     applyMood(savedMood)
+  }
+  const savedAccent = localStorage.getItem('akoma-docs-accent')
+  if (savedAccent === 'auto') {
+    applyAccent('auto')
+  } else if (accentPaletteIds.includes(savedAccent as AccentPalette)) {
+    applyAccent(savedAccent as AccentPalette)
   }
 })
 
@@ -62,7 +80,7 @@ watch(
     <aside class="docs-sidebar" :class="{ 'is-open': sidebarOpen }">
       <div class="docs-brand">
         <span class="docs-brand__name">Akoma</span>
-        <span class="docs-brand__tag">v0.3</span>
+        <span class="docs-brand__tag">v0.5</span>
       </div>
 
       <nav>
@@ -105,6 +123,19 @@ watch(
             Site
           </button>
         </div>
+        <label class="docs-accent-picker">
+          <span class="sr-only">Accent palette</span>
+          <select
+            :value="accent"
+            class="docs-accent-picker__select"
+            @change="applyAccent(($event.target as HTMLSelectElement).value as AccentPalette | 'auto')"
+          >
+            <option value="auto">Accent: Auto</option>
+            <option v-for="id in accentPaletteIds" :key="id" :value="id">
+              Accent: {{ accentPalettes[id].label }}
+            </option>
+          </select>
+        </label>
         <button type="button" class="docs-theme-toggle tap-scale" @click="toggleTheme">
           {{ theme === 'light' ? 'Dark' : 'Light' }}
         </button>

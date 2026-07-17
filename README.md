@@ -55,11 +55,32 @@ import { AkButton, AkInput } from '@rafael_dias/akoma'
 ### Dark mode & mood
 
 ```ts
-document.documentElement.dataset.theme = 'dark' // warm dark theme
-document.documentElement.dataset.mood = 'site' // sober "Site" mood
+document.documentElement.dataset.theme = 'dark'
+document.documentElement.dataset.mood = 'site'
+document.documentElement.dataset.accent = 'teal' // optional brand color
 ```
 
-## Components (v0.4)
+### Accent palettes (v0.5)
+
+Eight named palettes — apps are not locked to purple. Mood controls shape; accent controls brand color.
+
+| Palette | Use for |
+|---------|---------|
+| `violet` | Default App |
+| `evergreen` | Default Site |
+| `teal` | Productivity, study, wellness |
+| `ocean` | Data, analytics |
+| `amber` | Warm consumer apps |
+| `rose` / `coral` | Lifestyle, creative |
+| `slate` | Neutral B2B |
+
+```ts
+import { accentPaletteIds, applyAccentPalette } from '@rafael_dias/akoma'
+
+applyAccentPalette(document.documentElement, 'teal')
+```
+
+## Components (v0.5)
 
 | Component | Description |
 |-----------|-------------|
