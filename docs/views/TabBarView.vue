@@ -10,8 +10,8 @@ const active = ref('home')
     <span class="page-label">Components</span>
     <h1 class="page-title">TabBar</h1>
     <p class="docs-lead">
-      Bottom navigation for mobile shells — pill glass in App mood, flat bar in Site mood.
-      Pair with <code>.akoma-shell</code> padding so content clears the nav.
+      Full-width bottom navigation with a sliding accent indicator, icon lift on the active tab,
+      and press feedback. Pair with <code>.akoma-shell</code> so content clears the nav.
     </p>
   </header>
 
@@ -23,10 +23,19 @@ const active = ref('home')
 
     <div class="docs-tabbar-frame">
       <div class="docs-tabbar-frame__content">
-        <p v-if="active === 'home'" class="docs-tabbar-screen">Home content</p>
-        <p v-else-if="active === 'tasks'" class="docs-tabbar-screen">Tasks content</p>
-        <p v-else-if="active === 'stats'" class="docs-tabbar-screen">Stats content</p>
-        <p v-else class="docs-tabbar-screen">Profile content</p>
+        <Transition name="tab-screen" mode="out-in">
+          <p :key="active" class="docs-tabbar-screen">
+            {{
+              active === 'home'
+                ? 'Home content'
+                : active === 'tasks'
+                  ? 'Tasks content'
+                  : active === 'stats'
+                    ? 'Stats content'
+                    : 'Profile content'
+            }}
+          </p>
+        </Transition>
       </div>
 
       <AkTabBar v-model="active">
@@ -75,5 +84,22 @@ const active = ref('home')
 
 .docs-tabbar-frame :deep(.ak-tab-bar) {
   position: absolute;
+}
+
+.tab-screen-enter-active,
+.tab-screen-leave-active {
+  transition:
+    opacity 220ms var(--ease-smooth),
+    transform 220ms var(--ease-out-expo);
+}
+
+.tab-screen-enter-from {
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+.tab-screen-leave-to {
+  opacity: 0;
+  transform: translateY(-4px);
 }
 </style>

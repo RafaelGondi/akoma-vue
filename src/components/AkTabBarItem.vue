@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, inject } from 'vue'
+import { computed, inject, onMounted, onUnmounted, ref } from 'vue'
 import AkIcon from './AkIcon.vue'
 import { TAB_BAR_KEY } from './tab-bar-context'
 import type { CuidaIconName } from '../icons/cuida-icon-map'
@@ -27,8 +27,16 @@ if (!tabBar) {
 }
 
 const ctx = tabBar
-
+const itemRef = ref<HTMLButtonElement | null>(null)
 const active = computed(() => ctx.active.value === props.value)
+
+onMounted(() => {
+  if (itemRef.value) ctx.register(props.value, itemRef.value)
+})
+
+onUnmounted(() => {
+  ctx.unregister(props.value)
+})
 
 function select() {
   if (props.disabled) return
@@ -38,8 +46,9 @@ function select() {
 
 <template>
   <button
+    ref="itemRef"
     type="button"
-    class="ak-tab-bar__item tap-scale"
+    class="ak-tab-bar__item"
     :class="{ 'ak-tab-bar__item--active': active }"
     role="tab"
     :aria-selected="active"
@@ -65,11 +74,10 @@ function select() {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 3px;
+  gap: 4px;
   min-width: 0;
-  padding: 6px 4px 4px;
+  padding: 8px 6px 6px;
   border: 0;
-  border-radius: var(--radius-full);
   background: transparent;
   color: var(--text-tertiary);
   font-family: var(--font-body);
@@ -78,33 +86,22 @@ function select() {
   line-height: 1.1;
   letter-spacing: 0.01em;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
   transition:
     color var(--transition),
-    background-color var(--transition);
+    transform 180ms var(--ease-spring);
 }
 
 .ak-tab-bar__item:hover:not(:disabled):not(.ak-tab-bar__item--active) {
   color: var(--text-secondary);
 }
 
+.ak-tab-bar__item:active:not(:disabled) {
+  transform: scale(0.96);
+}
+
 .ak-tab-bar__item--active {
   color: var(--accent);
-}
-
-.ak-tab-bar__item--active::before {
-  content: '';
-  position: absolute;
-  inset: 1px 2px;
-  z-index: -1;
-  border-radius: var(--radius-full);
-  background: var(--accent-soft);
-}
-
-:global([data-mood='site']) .ak-tab-bar__item--active::before {
-  inset: auto 0 0;
-  height: 2px;
-  border-radius: 0;
-  background: var(--accent);
 }
 
 .ak-tab-bar__item:disabled {
@@ -114,7 +111,7 @@ function select() {
 
 .ak-tab-bar__item:focus-visible {
   outline: none;
-  box-shadow: var(--focus-ring);
+  box-shadow: inset var(--focus-ring);
 }
 
 .ak-tab-bar__icon {
@@ -124,6 +121,11 @@ function select() {
   width: 24px;
   height: 24px;
   line-height: 0;
+  transition: transform 320ms var(--ease-spring);
+}
+
+.ak-tab-bar__item--active .ak-tab-bar__icon {
+  transform: translateY(-2px) scale(1.1);
 }
 
 .ak-tab-bar__label {
@@ -131,5 +133,27 @@ function select() {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  transition:
+    color var(--transition),
+    font-weight 280ms var(--ease-smooth),
+    opacity 280ms var(--ease-smooth);
+}
+
+.ak-tab-bar__item--active .ak-tab-bar__label {
+  font-weight: 700;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ak-tab-bar__item:active:not(:disabled) {
+    transform: none;
+  }
+
+  .ak-tab-bar__icon {
+    transition: none;
+  }
+
+  .ak-tab-bar__item--active .ak-tab-bar__icon {
+    transform: none;
+  }
 }
 </style>

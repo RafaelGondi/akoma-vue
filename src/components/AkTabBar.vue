@@ -1,5 +1,14 @@
 <script setup lang="ts">
-import { provide, toRef } from 'vue'
+import {
+  nextTick,
+  onMounted,
+  onUnmounted,
+  provide,
+  reactive,
+  ref,
+  toRef,
+  watch,
+} from 'vue'
 import { TAB_BAR_KEY } from './tab-bar-context'
 
 const props = defineProps<{
@@ -10,15 +19,72 @@ const emit = defineEmits<{
   'update:modelValue': [value: string]
 }>()
 
+const trackRef = ref<HTMLElement | null>(null)
+const items = reactive(new Map<string, HTMLElement>())
+const indicator = ref({ x: 0, w: 0, ready: false })
+
+function updateIndicator() {
+  const track = trackRef.value
+  const el = items.get(props.modelValue)
+  if (!track || !el) {
+    indicator.value.ready = false
+    return
+  }
+
+  const trackRect = track.getBoundingClientRect()
+  const elRect = el.getBoundingClientRect()
+  indicator.value = {
+    x: elRect.left - trackRect.left,
+    w: elRect.width,
+    ready: true,
+  }
+}
+
+function register(value: string, el: HTMLElement) {
+  items.set(value, el)
+  void nextTick(updateIndicator)
+}
+
+function unregister(value: string) {
+  items.delete(value)
+  void nextTick(updateIndicator)
+}
+
+let resizeObserver: ResizeObserver | undefined
+
+onMounted(() => {
+  void nextTick(updateIndicator)
+  resizeObserver = new ResizeObserver(() => updateIndicator())
+  if (trackRef.value) resizeObserver.observe(trackRef.value)
+})
+
+onUnmounted(() => resizeObserver?.disconnect())
+
+watch(
+  () => props.modelValue,
+  () => void nextTick(updateIndicator),
+)
+
 provide(TAB_BAR_KEY, {
   active: toRef(props, 'modelValue'),
   select: (value: string) => emit('update:modelValue', value),
+  register,
+  unregister,
 })
 </script>
 
 <template>
   <nav class="ak-tab-bar" aria-label="Primary">
-    <div class="ak-tab-bar__track" role="tablist">
+    <div ref="trackRef" class="ak-tab-bar__track" role="tablist">
+      <span
+        class="ak-tab-bar__indicator"
+        :class="{ 'ak-tab-bar__indicator--ready': indicator.ready }"
+        :style="{
+          transform: `translateX(${indicator.x}px)`,
+          width: `${indicator.w}px`,
+        }"
+        aria-hidden="true"
+      />
       <slot />
     </div>
   </nav>
@@ -30,37 +96,45 @@ provide(TAB_BAR_KEY, {
   inset-inline: 0;
   bottom: 0;
   z-index: 50;
-  padding: 0 var(--page-pad-x) calc(var(--safe-bottom) + 10px);
+  padding-bottom: var(--safe-bottom);
   pointer-events: none;
 }
 
 .ak-tab-bar__track {
+  position: relative;
   display: flex;
   align-items: stretch;
-  gap: 2px;
   width: 100%;
-  max-width: var(--shell-max);
-  min-height: calc(var(--nav-height) - 8px);
-  margin: 0 auto;
-  padding: 5px;
+  min-height: var(--nav-height);
   pointer-events: auto;
   background: var(--nav-glass);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-full);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid var(--border);
   box-shadow: var(--shadow-nav);
 }
 
-:global([data-mood='site']) .ak-tab-bar__track {
-  max-width: none;
-  margin-inline: calc(var(--page-pad-x) * -1);
-  padding-inline: var(--page-pad-x);
-  border-radius: 0;
-  border-inline: 0;
-  border-bottom: 0;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  background: var(--bg-elevated);
+.ak-tab-bar__indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: var(--accent);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    transform 340ms var(--ease-out-expo),
+    width 340ms var(--ease-out-expo),
+    opacity 220ms var(--ease-smooth);
+}
+
+.ak-tab-bar__indicator--ready {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ak-tab-bar__indicator {
+    transition: none;
+  }
 }
 </style>
