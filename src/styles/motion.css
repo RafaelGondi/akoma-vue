@@ -16,6 +16,14 @@
   animation: ambient-drift 18s ease-in-out infinite;
 }
 
+[data-mood='site'] .ambient__orb {
+  opacity: 0.2;
+}
+
+[data-mood='site'][data-theme='dark'] .ambient__orb {
+  opacity: 0.14;
+}
+
 .ambient__orb--1 {
   width: 280px;
   height: 280px;

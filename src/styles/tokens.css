@@ -145,11 +145,11 @@
  * More controlled radii and visible structure suit finance and B2B contexts.
  */
 [data-mood='site'] {
-  --bg: #f6f7f3;
+  --bg: #f8f8f7;
   --bg-elevated: #ffffff;
-  --bg-soft: #edf0ea;
-  --bg-muted: #dfe4dc;
-  --bg-tinted: #e8f0eb;
+  --bg-soft: #f2f2f0;
+  --bg-muted: #e9e9e6;
+  --bg-tinted: #f4f5f4;
 
   --text: #213129;
   --text-secondary: #5b6a62;
@@ -259,11 +259,11 @@
 
 /* Site dark — deep green-charcoal, restrained and high-confidence. */
 [data-mood='site'][data-theme='dark'] {
-  --bg: #19211d;
-  --bg-elevated: #232d28;
-  --bg-soft: #2b3731;
-  --bg-muted: #35433b;
-  --bg-tinted: #263b31;
+  --bg: #1c1f1e;
+  --bg-elevated: #262928;
+  --bg-soft: #2f3331;
+  --bg-muted: #393e3b;
+  --bg-tinted: #252928;
 
   --text: #f0f3f0;
   --text-secondary: #abb7b0;
