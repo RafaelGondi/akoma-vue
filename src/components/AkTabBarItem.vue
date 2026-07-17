@@ -74,12 +74,12 @@ function select() {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 4px;
+  gap: 2px;
   min-width: 0;
-  padding: 8px 6px 6px;
+  padding: 7px 6px 5px;
   border: 0;
   background: transparent;
-  color: var(--text-tertiary);
+  color: var(--text-secondary);
   font-family: var(--font-body);
   font-size: 11px;
   font-weight: 600;
@@ -93,7 +93,7 @@ function select() {
 }
 
 .ak-tab-bar__item:hover:not(:disabled):not(.ak-tab-bar__item--active) {
-  color: var(--text-secondary);
+  color: var(--text);
 }
 
 .ak-tab-bar__item:active:not(:disabled) {
@@ -119,13 +119,17 @@ function select() {
   align-items: center;
   justify-content: center;
   width: 24px;
-  height: 24px;
+  height: 32px;
   line-height: 0;
-  transition: transform 320ms var(--ease-spring);
+  opacity: 0.76;
+  transition:
+    transform 320ms var(--ease-spring),
+    opacity var(--transition);
 }
 
 .ak-tab-bar__item--active .ak-tab-bar__icon {
-  transform: translateY(-2px) scale(1.1);
+  transform: translateY(-1px) scale(1.08);
+  opacity: 1;
 }
 
 .ak-tab-bar__label {
@@ -133,6 +137,7 @@ function select() {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  opacity: 0.76;
   transition:
     color var(--transition),
     font-weight 280ms var(--ease-smooth),
@@ -141,6 +146,7 @@ function select() {
 
 .ak-tab-bar__item--active .ak-tab-bar__label {
   font-weight: 700;
+  opacity: 1;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -33,9 +33,10 @@ function updateIndicator() {
 
   const trackRect = track.getBoundingClientRect()
   const elRect = el.getBoundingClientRect()
+  const indicatorWidth = 44
   indicator.value = {
-    x: elRect.left - trackRect.left,
-    w: elRect.width,
+    x: elRect.left - trackRect.left + (elRect.width - indicatorWidth) / 2,
+    w: indicatorWidth,
     ready: true,
   }
 }
@@ -98,15 +99,6 @@ provide(TAB_BAR_KEY, {
   z-index: 50;
   padding-bottom: var(--safe-bottom);
   pointer-events: none;
-}
-
-.ak-tab-bar__track {
-  position: relative;
-  display: flex;
-  align-items: stretch;
-  width: 100%;
-  min-height: var(--nav-height);
-  pointer-events: auto;
   background: var(--nav-glass);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -114,12 +106,25 @@ provide(TAB_BAR_KEY, {
   box-shadow: var(--shadow-nav);
 }
 
+.ak-tab-bar__track {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  max-width: var(--shell-max);
+  min-height: var(--nav-height);
+  margin: 0 auto;
+  pointer-events: auto;
+}
+
 .ak-tab-bar__indicator {
   position: absolute;
-  top: 0;
+  top: 7px;
   left: 0;
-  height: 2px;
-  background: var(--accent);
+  height: 32px;
+  border-radius: 11px;
+  background: var(--accent-soft);
+  border: 1px solid color-mix(in srgb, var(--accent) 10%, transparent);
   opacity: 0;
   pointer-events: none;
   transition:

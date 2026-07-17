@@ -10,7 +10,7 @@ const active = ref('home')
     <span class="page-label">Components</span>
     <h1 class="page-title">TabBar</h1>
     <p class="docs-lead">
-      Full-width bottom navigation with a sliding accent indicator, icon lift on the active tab,
+      Full-width bottom navigation with a compact sliding highlight, clear active state,
       and press feedback. Pair with <code>.akoma-shell</code> so content clears the nav.
     </p>
   </header>
