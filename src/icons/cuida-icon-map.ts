@@ -9,18 +9,21 @@ export const cuidaIconMap = new Map<string, string>(
   ]),
 )
 
-/** Cuida SVG exports omit viewBox and use evenodd groups that break when recolored. */
+/**
+ * Cuida SVG exports omit viewBox and wrap paths in evenodd groups that break
+ * when recolored via CSS. Rebuild a flat svg so paths inherit currentColor.
+ */
 function normalizeCuidaIconSvg(raw: string) {
-  return raw
-    .replace(/<svg([^>]*)>/, (_match, attrs: string) => {
-      const cleaned = attrs
-        .replace(/\s(width|height)="[^"]*"/g, '')
-        .replace(/\sfill-rule="[^"]*"/g, '')
-        .replace(/\sclip-rule="[^"]*"/g, '')
-      const viewBox = /\bviewBox=/.test(cleaned) ? '' : ' viewBox="0 0 24 24"'
-      return `<svg${cleaned}${viewBox} fill="currentColor">`
-    })
-    .replace(/\s(fill-rule|clip-rule)="[^"]*"/g, '')
+  const paths = raw.match(/<path\b[^>]*\/>/g)
+  if (!paths?.length) return raw
+
+  const cleanedPaths = paths.map((path) =>
+    path
+      .replace(/\sfill="[^"]*"/g, '')
+      .replace(/\s(fill-rule|clip-rule)="[^"]*"/g, ''),
+  )
+
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">${cleanedPaths.join('')}</svg>`
 }
 
 export function getCuidaIconMarkup(name: CuidaIconName) {

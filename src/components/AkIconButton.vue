@@ -48,17 +48,18 @@ const iconSize = computed(() => {
     :aria-busy="loading || undefined"
   >
     <span v-if="loading" class="ak-icon-button__spinner" aria-hidden="true" />
-    <AkIcon v-else-if="icon" :name="icon" :size="iconSize" />
     <span v-else class="ak-icon-button__icon">
-      <slot />
+      <AkIcon v-if="icon" :name="icon" :size="iconSize" />
+      <slot v-else />
     </span>
   </button>
 </template>
 
 <style scoped>
 .ak-icon-button {
-  display: inline-grid;
-  place-items: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
   border-radius: var(--radius-sm);
   border: 1px solid transparent;
@@ -127,16 +128,13 @@ const iconSize = computed(() => {
 }
 
 .ak-icon-button__icon {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
   width: 20px;
   height: 20px;
-}
-
-.ak-icon-button__icon :deep(svg) {
-  width: 100%;
-  height: 100%;
+  line-height: 0;
 }
 
 .ak-icon-button--sm .ak-icon-button__icon {

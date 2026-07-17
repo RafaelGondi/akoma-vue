@@ -35,10 +35,8 @@ const markup = computed(() => getCuidaIconMarkup(props.name))
 
 <style scoped>
 .ak-icon {
-  display: inline-flex;
+  display: block;
   flex-shrink: 0;
-  align-items: center;
-  justify-content: center;
   color: inherit;
   line-height: 0;
 }
@@ -47,7 +45,6 @@ const markup = computed(() => getCuidaIconMarkup(props.name))
   display: block;
   width: 100%;
   height: 100%;
-  fill: currentColor;
 }
 
 .ak-icon--missing::after {
