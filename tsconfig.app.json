@@ -7,7 +7,9 @@
     "baseUrl": ".",
     "paths": {
       "@akoma": ["./src/index.ts"],
-      "@akoma/*": ["./src/*"]
+      "@akoma/*": ["./src/*"],
+      "@sysvale/cuida-icons": ["./node_modules/@sysvale/cuida-icons/dist/index.d.ts"],
+      "@sysvale/cuida-icons/dist/index.js": ["./node_modules/@sysvale/cuida-icons/dist/index.d.ts"]
     },
     "noUnusedLocals": true,
     "noUnusedParameters": true,

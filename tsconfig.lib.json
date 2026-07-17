@@ -8,6 +8,12 @@
     "rootDir": "src",
     "types": ["vite/client"],
     "skipLibCheck": true,
+    "ignoreDeprecations": "6.0",
+    "baseUrl": ".",
+    "paths": {
+      "@sysvale/cuida-icons": ["./node_modules/@sysvale/cuida-icons/dist/index.d.ts"],
+      "@sysvale/cuida-icons/dist/index.js": ["./node_modules/@sysvale/cuida-icons/dist/index.d.ts"]
+    },
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true

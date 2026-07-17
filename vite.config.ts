@@ -10,6 +10,9 @@ export default defineConfig({
   resolve: {
     alias: {
       '@akoma': fileURLToPath(new URL('./src', import.meta.url)),
+      '@sysvale/cuida-icons': fileURLToPath(
+        new URL('./node_modules/@sysvale/cuida-icons/dist/index.js', import.meta.url),
+      ),
     },
   },
   server: {

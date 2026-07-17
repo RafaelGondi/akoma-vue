@@ -13,3 +13,5 @@ export {
   resolveAccentPalette,
 } from './accent-palettes'
 export type { AccentPalette } from './accent-palettes'
+export type { CuidaIconName } from './icons/cuida-icon-map'
+export { getCuidaIconMarkup, cuidaIconMap } from './icons/cuida-icon-map'

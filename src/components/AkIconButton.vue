@@ -1,7 +1,10 @@
 <script setup lang="ts">
+import { computed } from 'vue'
+import AkIcon from './AkIcon.vue'
+import type { CuidaIconName } from '../icons/cuida-icon-map'
 import type { IconButtonSize, IconButtonVariant } from '../types'
 
-withDefaults(
+const props = withDefaults(
   defineProps<{
     variant?: IconButtonVariant
     size?: IconButtonSize
@@ -9,6 +12,8 @@ withDefaults(
     loading?: boolean
     type?: 'button' | 'submit' | 'reset'
     label: string
+    /** Cuida Icons name — preferred over the default slot */
+    icon?: CuidaIconName
   }>(),
   {
     variant: 'ghost',
@@ -22,6 +27,11 @@ withDefaults(
 defineSlots<{
   default?: () => unknown
 }>()
+
+const iconSize = computed(() => {
+  const sizes: Record<IconButtonSize, number> = { sm: 16, md: 18, lg: 20 }
+  return sizes[props.size]
+})
 </script>
 
 <template>
@@ -39,7 +49,8 @@ defineSlots<{
   >
     <span v-if="loading" class="ak-icon-button__spinner" aria-hidden="true" />
     <span v-else class="ak-icon-button__icon">
-      <slot />
+      <AkIcon v-if="icon" :name="icon" :size="iconSize" />
+      <slot v-else />
     </span>
   </button>
 </template>
@@ -119,6 +130,8 @@ defineSlots<{
   display: inline-flex;
   width: 1.1em;
   height: 1.1em;
+  align-items: center;
+  justify-content: center;
 }
 
 .ak-icon-button__icon :deep(svg) {

@@ -33,7 +33,7 @@ Published docs: [https://rafaelgondi.github.io/akoma-vue/](https://rafaelgondi.g
 ## Library usage (after publish)
 
 ```bash
-npm install @rafael_dias/akoma
+npm install @rafael_dias/akoma @sysvale/cuida-icons
 ```
 
 ```ts
@@ -80,10 +80,11 @@ import { accentPaletteIds, applyAccentPalette } from '@rafael_dias/akoma'
 applyAccentPalette(document.documentElement, 'teal')
 ```
 
-## Components (v0.5)
+## Components (v0.6)
 
 | Component | Description |
 |-----------|-------------|
+| `AkIcon` | Cuida Icons wrapper |
 | `AkButton` | Primary / secondary / ghost / danger |
 | `AkIconButton` | Icon-only actions |
 | `AkBadge` | Status pills |

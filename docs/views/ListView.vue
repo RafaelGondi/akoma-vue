@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import {
   AkButton,
+  AkIcon,
   AkIconButton,
   AkList,
   AkListRow,
@@ -30,57 +31,31 @@ import {
       <AkList>
         <AkListRow interactive>
           <template #leading>
-            <span
-              style="
-                width: 36px;
-                height: 36px;
-                border-radius: 50%;
-                display: grid;
-                place-items: center;
-                background: var(--accent-soft);
-                color: var(--accent);
-                font-size: 18px;
-              "
-            >📚</span>
+            <span class="docs-list-icon docs-list-icon--accent">
+              <AkIcon name="open-book-outline" :size="18" />
+            </span>
           </template>
           Português
           <template #subtitle>
             <AkProgress :value="72" size="sm" />
           </template>
           <template #trailing>
-            <AkIconButton label="Remove subject" variant="ghost" size="sm">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M5 12h14" stroke-linecap="round" />
-              </svg>
-            </AkIconButton>
+            <AkIconButton label="Remove subject" icon="minus-outline" variant="ghost" size="sm" />
           </template>
         </AkListRow>
 
         <AkListRow interactive>
           <template #leading>
-            <span
-              style="
-                width: 36px;
-                height: 36px;
-                border-radius: 50%;
-                display: grid;
-                place-items: center;
-                background: var(--success-soft);
-                color: var(--success);
-                font-size: 18px;
-              "
-            >🧪</span>
+            <span class="docs-list-icon docs-list-icon--success">
+              <AkIcon name="test-tube-outline" :size="18" />
+            </span>
           </template>
           Química
           <template #subtitle>
             <AkProgress :value="28" size="sm" color="var(--cat-4)" />
           </template>
           <template #trailing>
-            <AkIconButton label="Remove subject" variant="ghost" size="sm">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M5 12h14" stroke-linecap="round" />
-              </svg>
-            </AkIconButton>
+            <AkIconButton label="Remove subject" icon="minus-outline" variant="ghost" size="sm" />
           </template>
         </AkListRow>
       </AkList>
@@ -97,3 +72,23 @@ import {
     </div>
   </section>
 </template>
+
+<style scoped>
+.docs-list-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+
+.docs-list-icon--accent {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.docs-list-icon--success {
+  background: var(--success-soft);
+  color: var(--success);
+}
+</style>

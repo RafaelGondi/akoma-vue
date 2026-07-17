@@ -7,6 +7,7 @@ Design philosophy and implementation guides shipped with the npm package.
 | [philosophy.md](./philosophy.md) | North star, pillars, anti-patterns |
 | [moods.md](./moods.md) | App vs Site — when to use each |
 | [colors.md](./colors.md) | Accent palettes — brand color options |
+| [icons.md](./icons.md) | Cuida Icons usage |
 | [decisions.md](./decisions.md) | Design decision log |
 | [implementation.md](./implementation.md) | Checklist for migrating apps |
 

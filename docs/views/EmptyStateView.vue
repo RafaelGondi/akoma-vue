@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { AkButton, AkEmptyState } from '@akoma'
+import { AkButton, AkEmptyState, AkIcon } from '@akoma'
 
 const title = ref('Nothing here yet')
 const description = ref('Add your first item to start building your library.')
@@ -19,9 +19,7 @@ const description = ref('Add your first item to start building your library.')
       <div style="width: min(100%, 360px)">
         <AkEmptyState :title="title" :description="description">
           <template #icon>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M12 5v14M5 12h14" stroke-linecap="round" />
-            </svg>
+            <AkIcon name="plus-outline" :size="21" />
           </template>
           <template #action>
             <AkButton>Add item</AkButton>

@@ -2,7 +2,7 @@
 
 Use when migrating an app to Akoma or briefing an agent.
 
-1. Install `@rafael_dias/akoma` and import `@rafael_dias/akoma/style.css` once at entry
+1. Install `@rafael_dias/akoma`, `@sysvale/cuida-icons`, and import `@rafael_dias/akoma/style.css` once at entry
 2. Pick mood at root: App for products, Site for finance/B2B
 3. Map buttons, inputs, cards, lists, badges, chips to Akoma components
 4. Replace loose hex/radius/shadow with tokens (`--bg`, `--accent`, `--space-*`, etc.)
