@@ -105,8 +105,7 @@ provide(TAB_BAR_KEY, {
   background: var(--nav-glass);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-top: 1px solid var(--border);
-  box-shadow: var(--shadow-nav);
+  border-top: 1px solid color-mix(in srgb, var(--border) 45%, transparent);
 }
 
 .ak-tab-bar__track {
