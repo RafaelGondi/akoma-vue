@@ -18,6 +18,9 @@ const router = useRouter()
       <AkButton size="lg" @click="router.push('/components/button')">
         Explore components
       </AkButton>
+      <AkButton size="lg" variant="secondary" @click="router.push('/philosophy')">
+        Design philosophy
+      </AkButton>
       <AkButton size="lg" variant="secondary" @click="router.push('/tokens')">
         View foundations
       </AkButton>
@@ -134,6 +137,11 @@ createApp(App).use(Akoma).mount('#app')</pre>
   <section class="docs-section reveal reveal-d4">
     <h2 class="docs-section__title">Browse the system</h2>
     <div class="docs-card-grid">
+      <RouterLink to="/philosophy" class="docs-link-card">
+        <span class="docs-link-card__eyebrow">Foundation</span>
+        <div class="docs-link-card__title">Philosophy</div>
+        <div class="docs-link-card__desc">Principles, decisions, and implementation guide.</div>
+      </RouterLink>
       <RouterLink to="/tokens" class="docs-link-card">
         <span class="docs-link-card__eyebrow">Foundation</span>
         <div class="docs-link-card__title">Tokens</div>

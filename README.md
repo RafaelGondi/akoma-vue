@@ -16,6 +16,9 @@ Both moods share DM Sans, an optional Lora editorial accent, components, spacing
 and accessible interaction states. Their palettes, radii, controls, and elevation
 adapt to context. Dark mode works in both via `data-theme="dark"`.
 
+See **Philosophy** in the docs (`/philosophy`) for design principles, decision log,
+and an implementation checklist for product teams.
+
 ## Quick start
 
 ```bash
@@ -23,7 +26,9 @@ npm install
 npm run dev
 ```
 
-Interactive docs: [http://localhost:5173](http://localhost:5173)
+Interactive docs (local): [http://localhost:5173](http://localhost:5173)
+
+Published docs: [https://rafaelgondi.github.io/akoma-vue/](https://rafaelgondi.github.io/akoma-vue/)
 
 ## Library usage (after publish)
 

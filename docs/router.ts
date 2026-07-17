@@ -5,6 +5,7 @@ export const navGroups = [
     title: 'Foundation',
     items: [
       { path: '/', name: 'home', label: 'Overview' },
+      { path: '/philosophy', name: 'philosophy', label: 'Philosophy' },
       { path: '/tokens', name: 'tokens', label: 'Tokens' },
     ],
   },
@@ -25,9 +26,10 @@ export const navGroups = [
 ] as const
 
 export const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     { path: '/', component: () => import('./views/HomeView.vue') },
+    { path: '/philosophy', component: () => import('./views/PhilosophyView.vue') },
     { path: '/tokens', component: () => import('./views/TokensView.vue') },
     { path: '/components/button', component: () => import('./views/ButtonView.vue') },
     { path: '/components/badge', component: () => import('./views/BadgeView.vue') },

@@ -34,10 +34,14 @@
     "dist",
     "src/styles"
   ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc -p tsconfig.lib.json --declaration --emitDeclarationOnly && vite build --config vite.lib.config.ts",
-    "build:docs": "vite build",
+    "build:docs": "vite build && node scripts/prepare-docs-dist.mjs",
     "preview": "vite preview",
     "typecheck": "vue-tsc -p tsconfig.app.json --noEmit"
   },
