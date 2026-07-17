@@ -64,14 +64,15 @@ function onInput(event: Event) {
 .ak-field {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 7px;
   width: 100%;
 }
 
 .ak-field__label {
-  font-size: 13.5px;
-  font-weight: 700;
-  color: var(--text-secondary);
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 650;
+  letter-spacing: -0.005em;
 }
 
 .ak-field__required {
@@ -82,12 +83,12 @@ function onInput(event: Event) {
 .ak-field__control {
   width: 100%;
   min-height: 100px;
-  padding: 13px 16px;
+  padding: 12px 15px;
   font-size: 15px;
-  line-height: 1.55;
-  border-radius: var(--radius-md);
-  background: var(--bg-soft);
-  border: 1.5px solid transparent;
+  line-height: 1.6;
+  border-radius: var(--field-radius);
+  background: var(--field-bg);
+  border: 1px solid var(--field-border);
   color: var(--text);
   outline: none;
   resize: vertical;
@@ -102,13 +103,14 @@ function onInput(event: Event) {
 }
 
 .ak-field__control:hover:not(:disabled):not(:focus) {
-  background: var(--bg-muted);
+  background: var(--field-bg-hover);
+  border-color: var(--control-border);
 }
 
 .ak-field__control:focus {
   background: var(--bg-elevated);
   border-color: var(--accent);
-  box-shadow: 0 0 0 4px var(--accent-soft);
+  box-shadow: var(--focus-ring);
 }
 
 .ak-field--error .ak-field__control {
@@ -117,7 +119,7 @@ function onInput(event: Event) {
 }
 
 .ak-field--error .ak-field__control:focus {
-  box-shadow: 0 0 0 4px var(--danger-soft);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--danger) 14%, transparent);
 }
 
 .ak-field--disabled {
@@ -125,7 +127,8 @@ function onInput(event: Event) {
 }
 
 .ak-field__hint {
-  font-size: 12.5px;
+  padding-left: 1px;
+  font-size: 12px;
   color: var(--text-tertiary);
 }
 

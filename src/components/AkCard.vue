@@ -46,9 +46,10 @@ defineSlots<{
   display: flex;
   flex-direction: column;
   width: 100%;
-  background: var(--bg-elevated);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-sm);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
   overflow: hidden;
 }
 
@@ -57,15 +58,15 @@ defineSlots<{
 }
 
 .ak-card--pad-sm {
-  padding: 14px 16px;
+  padding: var(--space-4);
 }
 
 .ak-card--pad-md {
-  padding: 18px 20px;
+  padding: var(--space-5);
 }
 
 .ak-card--pad-lg {
-  padding: 26px 28px;
+  padding: var(--space-8);
 }
 
 .ak-card--pad-none .ak-card__body,
@@ -84,17 +85,25 @@ defineSlots<{
 }
 
 .ak-card--pad-none .ak-card__footer {
-  padding-bottom: 16px;
+  padding-bottom: 18px;
 }
 
 .ak-card--interactive {
   cursor: pointer;
-  transition: box-shadow var(--transition), transform 0.18s var(--ease-spring);
+  transition:
+    border-color var(--transition),
+    box-shadow 220ms var(--ease-out-expo),
+    transform 220ms var(--ease-out-expo);
 }
 
 .ak-card--interactive:hover {
   box-shadow: var(--shadow-md);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+}
+
+.ak-card--interactive:focus-within {
+  border-color: var(--accent);
+  box-shadow: var(--focus-ring);
 }
 
 .ak-card__media {
@@ -105,8 +114,8 @@ defineSlots<{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
-  margin-bottom: 10px;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
 }
 
 .ak-card__body {
@@ -115,9 +124,15 @@ defineSlots<{
 }
 
 .ak-card__footer {
-  margin-top: 16px;
+  margin-top: var(--space-5);
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--space-2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ak-card--interactive {
+    transition: none;
+  }
 }
 </style>

@@ -54,22 +54,39 @@ defineSlots<{
   align-items: center;
   justify-content: center;
   gap: 8px;
+  position: relative;
   font-family: var(--font-body);
-  font-weight: 700;
-  border-radius: var(--radius-full);
-  border: none;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  border-radius: var(--button-radius);
+  border: 1px solid transparent;
   cursor: pointer;
   transition:
     background-color var(--transition),
     color var(--transition),
+    border-color var(--transition),
     box-shadow var(--transition),
-    opacity var(--transition);
+    opacity var(--transition),
+    transform var(--transition);
   white-space: nowrap;
   user-select: none;
 }
 
+.ak-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.ak-button:active:not(:disabled) {
+  transform: translateY(0) scale(0.985);
+}
+
+.ak-button:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
 .ak-button:disabled {
-  opacity: 0.5;
+  opacity: 0.46;
   cursor: not-allowed;
   transform: none !important;
 }
@@ -79,42 +96,43 @@ defineSlots<{
 }
 
 .ak-button--sm {
-  height: 34px;
-  padding: 0 16px;
+  min-height: 34px;
+  padding: 0 15px;
   font-size: 13px;
 }
 
 .ak-button--md {
-  height: 42px;
-  padding: 0 22px;
+  min-height: 42px;
+  padding: 0 20px;
   font-size: 14px;
 }
 
 .ak-button--lg {
-  height: 50px;
-  padding: 0 26px;
+  min-height: 50px;
+  padding: 0 24px;
   font-size: 15px;
 }
 
 .ak-button--primary {
   background: var(--accent);
-  color: #fff;
-  box-shadow: var(--shadow-sm);
+  color: var(--accent-contrast);
+  box-shadow: var(--button-shadow);
 }
 
 .ak-button--primary:hover:not(:disabled) {
   background: var(--accent-hover);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--button-shadow);
 }
 
 .ak-button--secondary {
   background: var(--bg-elevated);
   color: var(--text);
-  box-shadow: var(--shadow-sm);
+  border-color: var(--control-border);
 }
 
 .ak-button--secondary:hover:not(:disabled) {
   background: var(--bg-soft);
+  border-color: transparent;
 }
 
 .ak-button--ghost {
@@ -128,7 +146,8 @@ defineSlots<{
 
 .ak-button--danger {
   background: var(--danger);
-  color: #fff;
+  color: var(--accent-contrast);
+  box-shadow: 0 4px 14px color-mix(in srgb, var(--danger) 22%, transparent);
 }
 
 .ak-button--danger:hover:not(:disabled) {
@@ -166,6 +185,10 @@ defineSlots<{
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .ak-button {
+    transition: none;
+  }
+
   .ak-button__spinner {
     animation: none;
     border-right-color: currentColor;

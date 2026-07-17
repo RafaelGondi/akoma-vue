@@ -28,15 +28,17 @@ defineSlots<{
   align-items: center;
   align-self: flex-start;
   width: fit-content;
-  padding: 5px 12px;
-  border-radius: var(--radius-full);
-  font-size: 12px;
-  font-weight: 700;
+  min-height: 24px;
+  padding: 3px 9px;
+  border-radius: var(--badge-radius);
+  font-size: 11.5px;
+  font-weight: 650;
   line-height: 1.3;
+  letter-spacing: 0.005em;
 }
 
 .ak-badge--neutral {
-  background: var(--bg-muted);
+  background: var(--bg-soft);
   color: var(--text-secondary);
 }
 

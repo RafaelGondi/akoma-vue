@@ -62,7 +62,7 @@ watch(
     <aside class="docs-sidebar" :class="{ 'is-open': sidebarOpen }">
       <div class="docs-brand">
         <span class="docs-brand__name">Akoma</span>
-        <span class="docs-brand__tag">v0.2</span>
+        <span class="docs-brand__tag">v0.3</span>
       </div>
 
       <nav>

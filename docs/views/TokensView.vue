@@ -115,11 +115,12 @@ const semantic = [
   <section class="docs-section reveal reveal-d6">
     <h2 class="docs-section__title">Typography & radius</h2>
     <div class="docs-preview docs-preview--stack">
-      <p style="font-family: var(--font-display); font-size: 32px; font-weight: 600; letter-spacing: -0.01em">
-        Fraunces — a warm, expressive serif
+      <p style="font-family: var(--font-display); font-size: 32px; font-weight: 650; letter-spacing: -0.04em">
+        DM Sans — clear, human, quietly expressive
       </p>
       <p style="font-family: var(--font-body); font-size: 16px; color: var(--text-secondary)">
-        Nunito Sans — friendly, rounded body copy at 15–16px with comfortable line-height.
+        The same family carries headings, interface copy, and tabular financial data.
+        Lora is available through <code>--font-editorial</code> for rare editorial moments.
       </p>
       <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 8px">
         <div

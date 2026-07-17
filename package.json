@@ -1,7 +1,7 @@
 {
   "name": "@akoma/vue",
-  "version": "0.2.0",
-  "description": "Akoma design system for Vue 3 — warm surfaces, expressive type, tactile components.",
+  "version": "0.3.0",
+  "description": "A human Vue 3 design system with expressive App and trustworthy Site moods.",
   "type": "module",
   "author": "Rafael",
   "license": "MIT",

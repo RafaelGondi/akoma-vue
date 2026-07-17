@@ -1,8 +1,7 @@
 # Akoma
 
-A warm, human design system for Vue 3 — calm, close, and trustworthy. Nature-inspired
-colors, generous white space, rounded corners, and hierarchy built through spacing
-instead of borders.
+A human design system for Vue 3 — calm, clear, and trustworthy. Natural neutrals,
+generous space, quiet personality, and hierarchy built through rhythm before borders.
 
 Built with **Vue 3 Composition API + TypeScript**. Styles use CSS variables (no Tailwind).
 
@@ -10,12 +9,12 @@ Built with **Vue 3 Composition API + TypeScript**. Styles use CSS variables (no 
 
 | Mood | Feel | Use for | Activate |
 |------|------|---------|----------|
-| **App** (default) | Warm, playful, calm | Products and apps | — |
-| **Site** | Sober, natural, trustworthy | Marketing sites | `<html data-mood="site">` |
+| **App** (default) | Tactile, optimistic, relaxed | Products and apps | — |
+| **Site** | Composed, precise, trustworthy | Finance, B2B and institutional sites | `<html data-mood="site">` |
 
-Both moods share the same typography (Fraunces + Nunito Sans), components, and
-spacing DNA — only tokens change (palette, radius, shadows). Dark mode works in both
-via `data-theme="dark"` and stays warm (never cold black).
+Both moods share DM Sans, an optional Lora editorial accent, components, spacing,
+and accessible interaction states. Their palettes, radii, controls, and elevation
+adapt to context. Dark mode works in both via `data-theme="dark"`.
 
 ## Quick start
 
@@ -55,7 +54,7 @@ document.documentElement.dataset.theme = 'dark' // warm dark theme
 document.documentElement.dataset.mood = 'site' // sober "Site" mood
 ```
 
-## Components (v0.1)
+## Components (v0.3)
 
 | Component | Description |
 |-----------|-------------|
