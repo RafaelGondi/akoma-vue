@@ -57,20 +57,20 @@
   --border: rgba(41, 49, 45, 0.1);
   --border-strong: rgba(41, 49, 45, 0.18);
 
-  --cat-1: #5d8ca8;
-  --cat-2: #8a72b4;
-  --cat-3: #b98136;
-  --cat-4: #568269;
-  --cat-5: #b86e7f;
-  --cat-6: #7c7a72;
+  --cat-1: #578eae;
+  --cat-2: #896db9;
+  --cat-3: #bf8230;
+  --cat-4: #518768;
+  --cat-5: #bd697c;
+  --cat-6: #827e6c;
 
-  --success: #327257;
+  --success: #2e7658;
   --success-soft: #e5f2eb;
-  --warning: #8b641e;
+  --warning: #8f651a;
   --warning-soft: #f8efd9;
-  --danger: #a94f46;
+  --danger: #af4a40;
   --danger-soft: #fae9e6;
-  --info: #426f8e;
+  --info: #3d7093;
   --info-soft: #e6f0f6;
 
   --shadow-sm: none;
@@ -159,20 +159,20 @@
   --border: rgba(33, 49, 41, 0.11);
   --border-strong: rgba(33, 49, 41, 0.2);
 
-  --cat-1: #4f7f9b;
-  --cat-2: #76639b;
-  --cat-3: #9a702d;
-  --cat-4: #3f7557;
-  --cat-5: #9e596b;
-  --cat-6: #6f756f;
+  --cat-1: #4981a1;
+  --cat-2: #745da1;
+  --cat-3: #9f7128;
+  --cat-4: #3a7a57;
+  --cat-5: #a45368;
+  --cat-6: #697b69;
 
-  --success: #276a4a;
+  --success: #236e4a;
   --success-soft: #e2f0e8;
-  --warning: #805d18;
+  --warning: #845e14;
   --warning-soft: #f5ecd4;
-  --danger: #98483f;
+  --danger: #9d443a;
   --danger-soft: #f8e7e4;
-  --info: #386984;
+  --info: #336a89;
   --info-soft: #e3eef4;
 
   --shadow-sm: none;
@@ -227,13 +227,13 @@
   --border: rgba(255, 255, 255, 0.07);
   --border-strong: rgba(255, 255, 255, 0.14);
 
-  --success: #78b997;
+  --success: #73be97;
   --success-soft: #283e32;
-  --warning: #d4ad61;
+  --warning: #d9af5c;
   --warning-soft: #413823;
-  --danger: #df8a81;
+  --danger: #e3877d;
   --danger-soft: #472f2d;
-  --info: #86afc8;
+  --info: #82b0cc;
   --info-soft: #293b46;
 
   --shadow-sm: none;
@@ -270,13 +270,13 @@
   --text-tertiary: #77867d;
   --text-inverse: #17201b;
 
-  --success: #76b792;
+  --success: #71bc91;
   --success-soft: #274236;
-  --warning: #d0ab62;
+  --warning: #d5ad5d;
   --warning-soft: #413824;
-  --danger: #dc8b82;
+  --danger: #e0887e;
   --danger-soft: #472f2d;
-  --info: #84adc4;
+  --info: #7faec9;
   --info-soft: #293d47;
 
   --shadow-sm: none;
