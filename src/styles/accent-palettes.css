@@ -3,10 +3,12 @@
  * Mood (App / Site) controls shape and surfaces.
  * Accent controls brand color independently.
  *
- * Each palette exposes three chromatic shades:
- *   --accent-light  · lighter step
- *   --accent        · base (current brand color)
- *   --accent-dark   · darker step
+ * Each palette exposes five chromatic shades:
+ *   --accent-lighter · lightest step
+ *   --accent-light   · lighter step
+ *   --accent         · base brand color
+ *   --accent-dark    · darker step
+ *   --accent-darker  · darkest step
  *
  *   <html data-mood="app" data-accent="teal">
  *
@@ -17,9 +19,11 @@
 
 :root,
 [data-mood='app']:not([data-accent]) {
+  --accent-lighter: #a69cd6;
   --accent-light: #8578c9;
   --accent: #6658b8;
   --accent-dark: #4f4299;
+  --accent-darker: #3b3076;
   --accent-hover: var(--accent-dark);
   --accent-soft: #ece9f8;
   --accent-contrast: #ffffff;
@@ -28,9 +32,11 @@
 }
 
 [data-mood='site']:not([data-accent]) {
+  --accent-lighter: #50a27e;
   --accent-light: #3f8566;
   --accent: #2e684f;
   --accent-dark: #1f4a37;
+  --accent-darker: #112c20;
   --accent-hover: var(--accent-dark);
   --accent-soft: #e2eee7;
   --accent-contrast: #ffffff;
@@ -39,9 +45,11 @@
 }
 
 [data-accent='violet'] {
+  --accent-lighter: #a69cd6;
   --accent-light: #8578c9;
   --accent: #6658b8;
   --accent-dark: #4f4299;
+  --accent-darker: #3b3076;
   --accent-hover: var(--accent-dark);
   --accent-soft: #ece9f8;
   --accent-contrast: #ffffff;
@@ -50,9 +58,11 @@
 }
 
 [data-accent='evergreen'] {
+  --accent-lighter: #50a27e;
   --accent-light: #3f8566;
   --accent: #2e684f;
   --accent-dark: #1f4a37;
+  --accent-darker: #112c20;
   --accent-hover: var(--accent-dark);
   --accent-soft: #e2eee7;
   --accent-contrast: #ffffff;
@@ -61,9 +71,11 @@
 }
 
 [data-accent='teal'] {
+  --accent-lighter: #6caab3;
   --accent-light: #4f96a0;
   --accent: #3a7d85;
   --accent-dark: #2a5f66;
+  --accent-darker: #1b4146;
   --accent-hover: var(--accent-dark);
   --accent-soft: #e3eff0;
   --accent-contrast: #ffffff;
@@ -72,9 +84,11 @@
 }
 
 [data-accent='ocean'] {
+  --accent-lighter: #789cbb;
   --accent-light: #5584ad;
   --accent: #3d6a94;
   --accent-dark: #2d5174;
+  --accent-darker: #1e3953;
   --accent-hover: var(--accent-dark);
   --accent-soft: #e5eef5;
   --accent-contrast: #ffffff;
@@ -83,9 +97,11 @@
 }
 
 [data-accent='amber'] {
+  --accent-lighter: #c69f61;
   --accent-light: #b8893f;
   --accent: #9a702d;
   --accent-dark: #7a5720;
+  --accent-darker: #573e16;
   --accent-hover: var(--accent-dark);
   --accent-soft: #f5ecd4;
   --accent-contrast: #ffffff;
@@ -94,9 +110,11 @@
 }
 
 [data-accent='rose'] {
+  --accent-lighter: #cd93a0;
   --accent-light: #c07082;
   --accent: #a8586a;
   --accent-dark: #8a4556;
+  --accent-darker: #6b3341;
   --accent-hover: var(--accent-dark);
   --accent-soft: #fae9ed;
   --accent-contrast: #ffffff;
@@ -105,9 +123,11 @@
 }
 
 [data-accent='coral'] {
+  --accent-lighter: #d79c88;
   --accent-light: #cd7d62;
   --accent: #b5644a;
   --accent-dark: #944f39;
+  --accent-darker: #713b2a;
   --accent-hover: var(--accent-dark);
   --accent-soft: #faece8;
   --accent-contrast: #ffffff;
@@ -116,9 +136,11 @@
 }
 
 [data-accent='slate'] {
+  --accent-lighter: #8193a6;
   --accent-light: #627890;
   --accent: #4a5d73;
   --accent-dark: #384858;
+  --accent-darker: #26313d;
   --accent-hover: var(--accent-dark);
   --accent-soft: #e8ecf1;
   --accent-contrast: #ffffff;
@@ -129,9 +151,11 @@
 /* Dark — mood defaults */
 [data-theme='dark']:not([data-accent]),
 [data-theme='dark'][data-mood='app']:not([data-accent]) {
+  --accent-lighter: #d0caf4;
   --accent-light: #bbb2f0;
   --accent: #a99ee8;
   --accent-dark: #8a7dd4;
+  --accent-darker: #6553c9;
   --accent-hover: var(--accent-light);
   --accent-soft: #39354f;
   --accent-contrast: #211d38;
@@ -140,9 +164,11 @@
 }
 
 [data-theme='dark'][data-mood='site']:not([data-accent]) {
+  --accent-lighter: #add0bf;
   --accent-light: #96c6ae;
   --accent: #82b99d;
   --accent-dark: #68a084;
+  --accent-darker: #50856a;
   --accent-hover: var(--accent-light);
   --accent-soft: #294438;
   --accent-contrast: #13241c;
@@ -151,9 +177,11 @@
 }
 
 [data-theme='dark'][data-accent='violet'] {
+  --accent-lighter: #d0caf4;
   --accent-light: #bbb2f0;
   --accent: #a99ee8;
   --accent-dark: #8a7dd4;
+  --accent-darker: #6553c9;
   --accent-hover: var(--accent-light);
   --accent-soft: #39354f;
   --accent-contrast: #211d38;
@@ -162,9 +190,11 @@
 }
 
 [data-theme='dark'][data-accent='evergreen'] {
+  --accent-lighter: #add0bf;
   --accent-light: #96c6ae;
   --accent: #82b99d;
   --accent-dark: #68a084;
+  --accent-darker: #50856a;
   --accent-hover: var(--accent-light);
   --accent-soft: #294438;
   --accent-contrast: #13241c;
@@ -173,9 +203,11 @@
 }
 
 [data-theme='dark'][data-accent='teal'] {
+  --accent-lighter: #afd3d8;
   --accent-light: #95c7cd;
   --accent: #7eb8bf;
   --accent-dark: #629ca3;
+  --accent-darker: #4a7d83;
   --accent-hover: var(--accent-light);
   --accent-soft: #294548;
   --accent-contrast: #142528;
@@ -184,9 +216,11 @@
 }
 
 [data-theme='dark'][data-accent='ocean'] {
+  --accent-lighter: #b7d1e8;
   --accent-light: #9fc3e2;
   --accent: #8ab4d9;
   --accent-dark: #6e9bc2;
+  --accent-darker: #4882b5;
   --accent-hover: var(--accent-light);
   --accent-soft: #2a3a4a;
   --accent-contrast: #152130;
@@ -195,9 +229,11 @@
 }
 
 [data-theme='dark'][data-accent='amber'] {
+  --accent-lighter: #e3c894;
   --accent-light: #debb78;
   --accent: #d4ad61;
   --accent-dark: #b89448;
+  --accent-darker: #947637;
   --accent-hover: var(--accent-light);
   --accent-soft: #413823;
   --accent-contrast: #2a2212;
@@ -206,9 +242,11 @@
 }
 
 [data-theme='dark'][data-accent='rose'] {
+  --accent-lighter: #ecb7c1;
   --accent-light: #e79fad;
   --accent: #df8a9a;
   --accent-dark: #c96f81;
+  --accent-darker: #be4960;
   --accent-hover: var(--accent-light);
   --accent-soft: #472f35;
   --accent-contrast: #2a171c;
@@ -217,9 +255,11 @@
 }
 
 [data-theme='dark'][data-accent='coral'] {
+  --accent-lighter: #edc2b3;
   --accent-light: #e8ad99;
   --accent: #e09a82;
   --accent-dark: #c97f66;
+  --accent-darker: #bd5f3f;
   --accent-hover: var(--accent-light);
   --accent-soft: #4a322c;
   --accent-contrast: #2a1a15;
@@ -228,9 +268,11 @@
 }
 
 [data-theme='dark'][data-accent='slate'] {
+  --accent-lighter: #c4cfdc;
   --accent-light: #aebed1;
   --accent: #9aadc4;
   --accent-dark: #7f93ad;
+  --accent-darker: #5f799b;
   --accent-hover: var(--accent-light);
   --accent-soft: #2f3844;
   --accent-contrast: #171e28;

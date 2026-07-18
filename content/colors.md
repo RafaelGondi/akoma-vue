@@ -20,22 +20,24 @@ applyAccentPalette(document.documentElement, 'ocean')
 
 ## Shades
 
-Every palette exposes three chromatic steps:
+Every palette exposes five chromatic steps:
 
 | Token | Role |
 |-------|------|
+| `--accent-lighter` | Lightest step |
 | `--accent-light` | Lighter step — chips, secondary emphasis |
 | `--accent` | Base brand color |
 | `--accent-dark` | Darker step — hover / pressed depth |
+| `--accent-darker` | Darkest step — strong emphasis |
 
-`--accent-hover` aliases the darker step in light mode and the lighter step in dark mode. `--accent-soft` remains the tinted wash for backgrounds (not a chromatic shade).
+`--accent-hover` aliases `--accent-dark` in light mode and `--accent-light` in dark mode. `--accent-soft` remains the tinted wash for backgrounds (not a chromatic shade).
 
 ```css
 .badge {
   background: var(--accent-light);
 }
 .cta:active {
-  background: var(--accent-dark);
+  background: var(--accent-darker);
 }
 ```
 
@@ -67,9 +69,11 @@ Override tokens in your app — no fork required:
 
 ```css
 :root {
+  --accent-lighter: #5aa8b0;
   --accent-light: #3d8f99;
   --accent: #006d77;
   --accent-dark: #005a62;
+  --accent-darker: #00464c;
   --accent-hover: var(--accent-dark);
   --accent-soft: #e0f2f3;
   --accent-contrast: #ffffff;

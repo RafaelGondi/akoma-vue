@@ -63,7 +63,7 @@ document.documentElement.dataset.accent = 'teal' // optional brand color
 ### Accent palettes (v0.8)
 
 Eight named palettes — apps are not locked to purple. Mood controls shape; accent controls brand color.
-Each palette exposes three chromatic shades: `--accent-light`, `--accent`, `--accent-dark`.
+Each palette exposes five chromatic shades: `--accent-lighter`, `--accent-light`, `--accent`, `--accent-dark`, `--accent-darker`.
 
 | Palette | Use for |
 |---------|---------|

@@ -15,9 +15,11 @@ const text = [
 ]
 
 const brand = [
+  { name: 'Accent lighter', token: '--accent-lighter' },
   { name: 'Accent light', token: '--accent-light' },
   { name: 'Accent', token: '--accent' },
   { name: 'Accent dark', token: '--accent-dark' },
+  { name: 'Accent darker', token: '--accent-darker' },
   { name: 'Accent soft', token: '--accent-soft' },
   { name: 'Accent hover', token: '--accent-hover' },
 ]
@@ -59,9 +61,11 @@ const semantic = [
     <div class="docs-swatch-grid">
       <div v-for="id in accentPaletteIds" :key="id" class="docs-swatch">
         <div class="docs-swatch__shades" aria-hidden="true">
+          <span :style="{ background: accentPalettes[id].lighter }" />
           <span :style="{ background: accentPalettes[id].light }" />
           <span :style="{ background: accentPalettes[id].sample }" />
           <span :style="{ background: accentPalettes[id].dark }" />
+          <span :style="{ background: accentPalettes[id].darker }" />
         </div>
         <div class="docs-swatch__meta">
           <div class="docs-swatch__name">{{ accentPalettes[id].label }}</div>
