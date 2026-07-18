@@ -350,6 +350,17 @@ body {
   height: 72px;
 }
 
+.docs-swatch__shades {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 72px;
+}
+
+.docs-swatch__shades > span {
+  display: block;
+  min-width: 0;
+}
+
 .docs-swatch__meta {
   padding: 12px 14px;
 }
