@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { accentPaletteIds, accentPalettes } from '@akoma'
+import { accentPaletteIds, accentPalettes, completionShadeClass } from '@akoma'
+import type { CompletionShade } from '@akoma'
 
 const surfaces = [
   { name: 'Background', token: '--bg' },
@@ -38,6 +39,15 @@ const semantic = [
   { name: 'Warning', token: '--warning' },
   { name: 'Danger', token: '--danger' },
   { name: 'Info', token: '--info' },
+]
+
+const completionSteps: Array<{ name: string; shade: CompletionShade }> = [
+  { name: '0%', shade: 'none' },
+  { name: '1–24%', shade: 'lighter' },
+  { name: '25–49%', shade: 'light' },
+  { name: '50–74%', shade: 'base' },
+  { name: '75–99%', shade: 'dark' },
+  { name: '100%', shade: 'darker' },
 ]
 </script>
 
@@ -118,6 +128,27 @@ const semantic = [
   </section>
 
   <section class="docs-section reveal reveal-d5">
+    <h2 class="docs-section__title">Completion intensity</h2>
+    <p class="docs-section__desc" style="margin-bottom: 16px">
+      Rate → shade helpers for heatmaps. Classes
+      <code>.ak-completion-shade--*</code> via
+      <code>completionShadeClass()</code>.
+    </p>
+    <div class="docs-swatch-grid">
+      <div v-for="item in completionSteps" :key="item.shade" class="docs-swatch">
+        <div
+          class="docs-swatch__color"
+          :class="completionShadeClass(item.shade)"
+        />
+        <div class="docs-swatch__meta">
+          <div class="docs-swatch__name">{{ item.name }}</div>
+          <div class="docs-swatch__token">{{ completionShadeClass(item.shade) }}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="docs-section reveal reveal-d6">
     <h2 class="docs-section__title">Categories</h2>
     <div class="docs-swatch-grid">
       <div v-for="item in cats" :key="item.token" class="docs-swatch">
@@ -130,7 +161,7 @@ const semantic = [
     </div>
   </section>
 
-  <section class="docs-section reveal reveal-d6">
+  <section class="docs-section reveal reveal-d7">
     <h2 class="docs-section__title">Semantic</h2>
     <div class="docs-swatch-grid">
       <div v-for="item in semantic" :key="item.token" class="docs-swatch">
@@ -143,7 +174,7 @@ const semantic = [
     </div>
   </section>
 
-  <section class="docs-section reveal reveal-d7">
+  <section class="docs-section reveal reveal-d8">
     <h2 class="docs-section__title">Typography & radius</h2>
     <div class="docs-preview docs-preview--stack">
       <p style="font-family: var(--font-display); font-size: 32px; font-weight: 650; letter-spacing: -0.04em">

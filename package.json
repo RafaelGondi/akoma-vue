@@ -1,6 +1,6 @@
 {
   "name": "@rafael_dias/akoma",
-  "version": "0.8.5",
+  "version": "0.8.6",
   "description": "A human Vue 3 design system with expressive App and trustworthy Site moods.",
   "type": "module",
   "author": "Rafael",
@@ -30,6 +30,7 @@
     "./base.css": "./src/styles/base.css",
     "./motion.css": "./src/styles/motion.css",
     "./accent-palettes.css": "./src/styles/accent-palettes.css",
+    "./completion-shade.css": "./src/styles/completion-shade.css",
     "./content/*": "./content/*"
   },
   "files": [

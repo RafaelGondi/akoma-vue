@@ -83,16 +83,33 @@ system accent alone if items need to be distinguishable from each other.
 
 ## Completion scale
 
-Akoma’s five chromatic shades are not only button states — they map **intensity**:
+Akoma’s five chromatic shades are not only button states — they map **intensity**.
+Use the helpers and utilities shipped in the package:
 
-| Rate | Shade token |
-|------|-------------|
-| 0% | muted (`--bg-muted`) |
-| 1–24% | `--accent-lighter` |
-| 25–49% | `--accent-light` |
-| 50–74% | `--accent` |
-| 75–99% | `--accent-dark` |
-| 100% | `--accent-darker` |
+```ts
+import {
+  completionShade,
+  completionShadeClass,
+  completionShadeColor,
+} from '@rafael_dias/akoma'
+
+const shade = completionShade(0.8) // 'dark'
+const cls = completionShadeClass(shade) // 'ak-completion-shade--dark'
+const color = completionShadeColor(shade) // 'var(--accent-dark)'
+```
+
+```html
+<div class="ak-completion-shade--base">75%</div>
+```
+
+| Rate | Shade | Class |
+|------|-------|-------|
+| 0% | `none` | `.ak-completion-shade--none` |
+| 1–24% | `lighter` | `.ak-completion-shade--lighter` |
+| 25–49% | `light` | `.ak-completion-shade--light` |
+| 50–74% | `base` | `.ak-completion-shade--base` |
+| 75–99% | `dark` | `.ak-completion-shade--dark` |
+| 100% | `darker` | `.ak-completion-shade--darker` |
 
 More complete → deeper. Remains correct when the product changes `data-accent`.
 

@@ -15,3 +15,10 @@ export {
 export type { AccentPalette } from './accent-palettes'
 export type { CuidaIconName } from './icons/cuida-icon-map'
 export { getCuidaIconMarkup, cuidaIconMap } from './icons/cuida-icon-map'
+export {
+  completionShade,
+  completionShadeClass,
+  completionShadeNeedsContrast,
+  completionShadeColor,
+} from './utils/completion-shade'
+export type { CompletionShade } from './utils/completion-shade'

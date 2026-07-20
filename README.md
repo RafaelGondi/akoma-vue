@@ -81,6 +81,16 @@ import { accentPaletteIds, applyAccentPalette } from '@rafael_dias/akoma'
 applyAccentPalette(document.documentElement, 'teal')
 ```
 
+### Completion intensity (v0.8.6)
+
+Map a 0–1 rate to the five accent shades for heatmaps and progress fills:
+
+```ts
+import { completionShade, completionShadeClass } from '@rafael_dias/akoma'
+
+const cls = completionShadeClass(completionShade(0.8)) // ak-completion-shade--dark
+```
+
 ## Components (v0.8)
 
 | Component | Description |

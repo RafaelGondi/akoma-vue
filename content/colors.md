@@ -41,6 +41,12 @@ Every palette exposes five chromatic steps:
 }
 ```
 
+## Completion intensity
+
+For heatmaps and progress fills, map a 0–1 rate to the shade scale with
+`completionShade()` / `completionShadeClass()` (see [patterns.md](./patterns.md)).
+Classes: `.ak-completion-shade--none` … `--darker`.
+
 ## Defaults (no `data-accent`)
 
 | Mood | Default accent |
