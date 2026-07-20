@@ -105,6 +105,16 @@ const { mode, setMode, toggleMode } = useAkomaTheme({
 
 `theme-color` meta syncs from `--bg` automatically.
 
+### App shell (v0.8.8)
+
+```html
+<div class="ak-app-root">
+  <main class="ak-app-main">
+    <div class="ak-app-scroll">…</div>
+  </main>
+</div>
+```
+
 ## Components (v0.8)
 
 | Component | Description |
