@@ -8,12 +8,14 @@ import decisions from '../../content/decisions.md?raw'
 import implementation from '../../content/implementation.md?raw'
 import colors from '../../content/colors.md?raw'
 import icons from '../../content/icons.md?raw'
+import patterns from '../../content/patterns.md?raw'
 
 const guides: Record<string, { title: string; label: string; source: string }> = {
   philosophy: { title: 'Philosophy', label: 'Philosophy', source: philosophy },
   moods: { title: 'App vs Site', label: 'Moods', source: moods },
   colors: { title: 'Accent palettes', label: 'Colors', source: colors },
   icons: { title: 'Icons', label: 'Icons', source: icons },
+  patterns: { title: 'App patterns', label: 'Patterns', source: patterns },
   decisions: { title: 'Design decisions', label: 'Decisions', source: decisions },
   implementation: { title: 'Implementation', label: 'Checklist', source: implementation },
 }

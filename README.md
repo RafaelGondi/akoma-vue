@@ -81,7 +81,7 @@ import { accentPaletteIds, applyAccentPalette } from '@rafael_dias/akoma'
 applyAccentPalette(document.documentElement, 'teal')
 ```
 
-## Components (v0.6)
+## Components (v0.8)
 
 | Component | Description |
 |-----------|-------------|
@@ -96,6 +96,8 @@ applyAccentPalette(document.documentElement, 'teal')
 | `AkProgress` | Progress bars |
 | `AkDivider` | Section separators |
 | `AkSwitch` | Toggle settings |
+| `AkTabBar` / `AkTabBarItem` | Bottom navigation (Cuida icons) |
+| `AkSheet` | Mobile bottom sheet for detail/forms |
 | `AkInput` | Labeled text field |
 | `AkTextarea` | Multi-line field |
 | `AkEmptyState` | Empty list placeholder |
@@ -119,6 +121,9 @@ Guides live in `content/` and ship with the package:
 |------|-------|
 | `philosophy.md` | North star, pillars, anti-patterns |
 | `moods.md` | App vs Site |
+| `colors.md` | Accent palettes |
+| `icons.md` | Cuida Icons |
+| `patterns.md` | Mood `app` PWA conventions (shell, page chrome, sheets) |
 | `decisions.md` | Design decision log |
 | `implementation.md` | Migration checklist |
 

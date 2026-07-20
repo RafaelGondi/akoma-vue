@@ -38,6 +38,12 @@ When in doubt, follow these choices instead of improvising.
 - **Why:** Friendly vs precise contexts
 - **Rejected:** Uppercase micro-labels; inputs without focus rings
 
+## Overlays
+
+- **Choice:** Bottom sheet (`AkSheet`) for mobile detail/forms; rare `--shadow-md` on elevated surfaces
+- **Why:** Thumb-reachable; keeps context; matches mood `app` PWAs
+- **Rejected:** Centered desktop modals as the default mobile pattern
+
 ## API
 
 - **Choice:** Vue 3 + TS; props in English; CSS variables; no Tailwind in the library

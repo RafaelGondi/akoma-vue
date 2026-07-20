@@ -8,6 +8,7 @@ Design philosophy and implementation guides shipped with the npm package.
 | [moods.md](./moods.md) | App vs Site — when to use each |
 | [colors.md](./colors.md) | Accent palettes — brand color options |
 | [icons.md](./icons.md) | Cuida Icons usage |
+| [patterns.md](./patterns.md) | Mood `app` PWA conventions (shell, page chrome, sheets) |
 | [decisions.md](./decisions.md) | Design decision log |
 | [implementation.md](./implementation.md) | Checklist for migrating apps |
 
