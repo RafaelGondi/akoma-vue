@@ -36,6 +36,8 @@
   --nav-height: 68px;
   --safe-bottom: env(safe-area-inset-bottom, 0px);
   --safe-top: env(safe-area-inset-top, 0px);
+  --fab-height: 3.25rem;
+  --fab-bottom: calc(var(--safe-bottom) + var(--nav-height) + var(--space-3));
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-spring: cubic-bezier(0.22, 1, 0.36, 1);

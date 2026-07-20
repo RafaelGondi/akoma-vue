@@ -36,15 +36,21 @@ Every authenticated screen should open with:
 3. **Meta** — secondary text (`--text-secondary`) — date, short intro
 4. **Actions** — optional `AkIconButton`s on the side, never inside the title
 
-Section-level chrome uses `AkSectionHeader`, not a second `.page-label`.
+Use `AkPageHeader` for this anatomy:
 
-```html
-<header>
-  <span class="page-label">Your routine</span>
-  <h1 class="page-title">Today</h1>
-  <p style="color: var(--text-secondary)">Monday, 20 July</p>
-</header>
+```vue
+<AkPageHeader
+  label="Your routine"
+  title="Today"
+  meta="Monday, 20 July"
+  size="md"
+>
+  <template #actions>…</template>
+  <!-- optional body: progress, chips -->
+</AkPageHeader>
 ```
+
+Section-level chrome uses `AkSectionHeader`, not a second `.page-label`.
 
 ## App shell
 
@@ -131,6 +137,31 @@ Mobile detail and forms open in a **bottom sheet**, not a centered modal.
 ```
 
 Confirm destructive actions with a sheet + `AkButton variant="danger"`, not `window.confirm`.
+
+## Floating primary (`AkFab`)
+
+Pin the primary action above the tab bar — never inside the scroll container.
+
+```vue
+<div class="app-scroll ak-page-body--with-fab">…</div>
+<AkFab>
+  <AkButton>New</AkButton>
+</AkFab>
+```
+
+Tokens: `--fab-height`, `--fab-bottom`.
+
+## Theme (`useAkomaTheme`)
+
+```ts
+const { mode, setMode, toggleMode } = useAkomaTheme({
+  mood: 'app',
+  accent: 'teal',
+  storageKey: 'my-app-theme',
+})
+```
+
+Applies `data-theme` / `data-mood` / accent and syncs `theme-color` from `--bg`.
 
 ## Elevation policy
 

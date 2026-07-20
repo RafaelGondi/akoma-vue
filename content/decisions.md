@@ -44,6 +44,12 @@ When in doubt, follow these choices instead of improvising.
 - **Why:** Thumb-reachable; keeps context; matches mood `app` PWAs
 - **Rejected:** Centered desktop modals as the default mobile pattern
 
+## Page chrome & FAB
+
+- **Choice:** `AkPageHeader` for label/title/meta; `AkFab` pinned via `--fab-bottom`
+- **Why:** One anatomy across apps; primary action never scrolls away
+- **Rejected:** Per-app header CSS forks; FAB inside the scroll container
+
 ## API
 
 - **Choice:** Vue 3 + TS; props in English; CSS variables; no Tailwind in the library

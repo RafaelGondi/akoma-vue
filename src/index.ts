@@ -22,3 +22,14 @@ export {
   completionShadeColor,
 } from './utils/completion-shade'
 export type { CompletionShade } from './utils/completion-shade'
+export {
+  useAkomaTheme,
+  applyAkomaTheme,
+  syncThemeColorMeta,
+} from './composables/use-akoma-theme'
+export type {
+  ThemeMode,
+  AkomaMood,
+  ApplyAkomaThemeOptions,
+  UseAkomaThemeOptions,
+} from './composables/use-akoma-theme'

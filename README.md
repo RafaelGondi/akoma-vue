@@ -91,6 +91,20 @@ import { completionShade, completionShadeClass } from '@rafael_dias/akoma'
 const cls = completionShadeClass(completionShade(0.8)) // ak-completion-shade--dark
 ```
 
+### Theme helper (v0.8.7)
+
+```ts
+import { useAkomaTheme } from '@rafael_dias/akoma'
+
+const { mode, setMode, toggleMode } = useAkomaTheme({
+  mood: 'app',
+  accent: 'evergreen',
+  storageKey: 'my-app-theme',
+})
+```
+
+`theme-color` meta syncs from `--bg` automatically.
+
 ## Components (v0.8)
 
 | Component | Description |
@@ -108,6 +122,8 @@ const cls = completionShadeClass(completionShade(0.8)) // ak-completion-shade--d
 | `AkSwitch` | Toggle settings |
 | `AkTabBar` / `AkTabBarItem` | Bottom navigation (Cuida icons) |
 | `AkSheet` | Mobile bottom sheet for detail/forms |
+| `AkPageHeader` | Page chrome — label / title / meta / actions |
+| `AkFab` | Floating primary action above the tab bar |
 | `AkInput` | Labeled text field |
 | `AkTextarea` | Multi-line field |
 | `AkEmptyState` | Empty list placeholder |

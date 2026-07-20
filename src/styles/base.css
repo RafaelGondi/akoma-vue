@@ -146,6 +146,17 @@ select:focus-visible {
   padding-bottom: calc(var(--nav-height) + var(--safe-bottom) + 12px);
 }
 
+/** Extra bottom padding when a FAB sits above the tab bar */
+.ak-page-body--with-fab {
+  padding-bottom: calc(
+    var(--nav-height)
+    + var(--safe-bottom)
+    + var(--space-3)
+    + var(--fab-height)
+    + var(--space-5)
+  );
+}
+
 .numeric {
   font-variant-numeric: tabular-nums lining-nums;
 }
