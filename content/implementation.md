@@ -9,11 +9,13 @@ Use when migrating an app to Akoma or briefing an agent.
 5. Prefer `AkList` over `AkCard` for primary personal-app surfaces
 6. Use `AkSheet` for mobile detail/forms (not centered modals)
 7. Use `AkTabBar` for primary navigation in mood `app` PWAs
-8. Replace loose hex/radius/shadow with tokens (`--bg`, `--accent`, `--space-*`, etc.)
-9. Use `AkEmptyState` and `AkShimmer` instead of one-off empty/loading UI
-10. Use `.numeric` for financial figures (tabular nums)
-11. Map domain colors to `--cat-1` … `--cat-6` in app `:root` if needed
-12. Do **not** refactor stores, routes, or API during UI-only work
+8. Use `.ak-app-root` / `.ak-app-main` / `.ak-app-scroll` for the locked phone shell
+9. Prefer Cuida icons via `AkIcon` / `AkIconButton icon=` (peer `@sysvale/cuida-icons`)
+10. Replace loose hex/radius/shadow with tokens (`--bg`, `--accent`, `--space-*`, etc.)
+11. Use `AkEmptyState` and `AkShimmer` instead of one-off empty/loading UI
+12. Use `.numeric` for financial figures (tabular nums)
+13. Map domain colors to `--cat-1` … `--cat-6` in app `:root` if needed
+14. Do **not** refactor stores, routes, or API during UI-only work
 
 ## Setup example (finance app)
 

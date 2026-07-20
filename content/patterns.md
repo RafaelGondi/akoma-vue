@@ -62,20 +62,22 @@ Contract for phone-like PWAs:
 4. Cap width with `--shell-max` (480px) and center
 5. Pair with `AkTabBar` and `AkAmbientBg` (`contained`)
 
-Akoma ships `.akoma-shell` and `--shell-max` / `--nav-height` / `--safe-*`.
-Extend them — do not invent a parallel shell that forgets the scroll contract.
+Use the shipped shell classes:
 
-```css
-.app-root {
-  display: flex;
-  flex-direction: column;
-  height: 100dvh;
-  max-width: var(--shell-max);
-  margin: 0 auto;
-  overflow: hidden;
-  background: var(--bg);
-}
+```html
+<div class="ak-app-root">
+  <AkAmbientBg contained />
+  <main class="ak-app-main">
+    <div class="ak-app-page">
+      <div class="ak-app-scroll">…</div>
+    </div>
+  </main>
+  <AkTabBar>…</AkTabBar>
+</div>
 ```
+
+`.akoma-shell` remains a lighter content wrapper (max-width + nav padding) for simpler pages.
+Do not invent a parallel shell that forgets the scroll/`dvh` contract.
 
 ## System accent vs category color
 

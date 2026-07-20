@@ -146,6 +146,41 @@ select:focus-visible {
   padding-bottom: calc(var(--nav-height) + var(--safe-bottom) + 12px);
 }
 
+/**
+ * Locked phone shell for mood `app` PWAs:
+ * viewport height, single scroll child, centered to `--shell-max`.
+ */
+.ak-app-root {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  max-width: var(--shell-max);
+  margin: 0 auto;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.ak-app-main {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.ak-app-page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.ak-app-scroll {
+  overflow-y: auto;
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
 /** Extra bottom padding when a FAB sits above the tab bar */
 .ak-page-body--with-fab {
   padding-bottom: calc(
